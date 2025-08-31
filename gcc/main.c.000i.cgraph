@@ -1,0 +1,1878 @@
+Trivially needed symbols: main config_ios buttoncallback SysTick_Handler choose_genre current_genre len_genres genres
+Trivially needed symbols: counter
+
+
+Initial Symbol table:
+
+SystemCoreClock/100 (SystemCoreClock) @0x7f5d2c4dba80
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: main/85 (read)
+  Availability: not-ready
+  Varpool flags:
+ClockSetCoreClock/99 (ClockSetCoreClock) @0x7f5d2c4e2e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/85 
+  Calls: 
+LCD_ClearAll/98 (LCD_ClearAll) @0x7f5d2c4e2ca8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_SetAll/97 (LCD_SetAll) @0x7f5d2c4e2b40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_Init/96 (LCD_Init) @0x7f5d2c4e29d8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+PWM_Start/95 (PWM_Start) @0x7f5d2c4e2870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+PWM_Write/94 (PWM_Write) @0x7f5d2c4e2708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/85 config_ios/84 
+  Calls: 
+PWM_Init/93 (PWM_Init) @0x7f5d2c4e25a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+Button_SetCallback/92 (Button_SetCallback) @0x7f5d2c4e2438
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+Button_Init/91 (Button_Init) @0x7f5d2c4e22d0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LED_Init/90 (LED_Init) @0x7f5d2c4e2168
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_WriteAlphanumericDisplay/89 (LCD_WriteAlphanumericDisplay) @0x7f5d2c4e2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: buttoncallback/83 
+  Calls: 
+LED_Toggle/88 (LED_Toggle) @0x7f5d2c4d0e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/85 buttoncallback/83 
+  Calls: 
+Button_ReadReleased/87 (Button_ReadReleased) @0x7f5d2c4d0ca8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: buttoncallback/83 
+  Calls: 
+counter/86 (counter) @0x7f5d2c4db300
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f5d2c4d0870
+  References: 
+  Referring: SysTick_Handler/82 (read)SysTick_Handler/82 (read)SysTick_Handler/82 (write)SysTick_Handler/82 (write)
+  Availability: not-ready
+  Varpool flags: initialized
+main/85 (main) @0x7f5d2c4d0b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x1796a00
+  References: SystemCoreClock/100 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: PWM_Write/94 LED_Toggle/88 SysTick_Config/73 config_ios/84 ClockSetCoreClock/99 
+config_ios/84 (config_ios) @0x7f5d2c4d09d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f5d2c4d0b40
+  References: buttoncallback/83 (addr)
+  Referring: 
+  Function flags: body
+  Called by: main/85 
+  Calls: LCD_ClearAll/98 LCD_SetAll/97 LCD_Init/96 PWM_Start/95 PWM_Write/94 PWM_Init/93 Button_SetCallback/92 Button_Init/91 LED_Init/90 
+buttoncallback/83 (buttoncallback) @0x7f5d2c4d0870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Address is taken.
+  Aux: @0x7f5d2c4d09d8
+  References: current_genre/80 (read)genres/78 (read)
+  Referring: config_ios/84 (addr)
+  Function flags: body
+  Called by: 
+  Calls: choose_genre/81 LCD_WriteAlphanumericDisplay/89 LED_Toggle/88 Button_ReadReleased/87 
+SysTick_Handler/82 (SysTick_Handler) @0x7f5d2c4d0708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f5d2c4d0870
+  References: counter/86 (read)counter/86 (read)counter/86 (write)counter/86 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+choose_genre/81 (choose_genre) @0x7f5d2c4d05a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f5d2c4d0708
+  References: current_genre/80 (read)current_genre/80 (write)current_genre/80 (read)len_genres/79 (read)current_genre/80 (write)
+  Referring: 
+  Function flags: body
+  Called by: buttoncallback/83 
+  Calls: 
+current_genre/80 (current_genre) @0x7f5d2c4ccc80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f5d2c4d05a0
+  References: 
+  Referring: choose_genre/81 (read)choose_genre/81 (write)choose_genre/81 (read)choose_genre/81 (write)buttoncallback/83 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+len_genres/79 (len_genres) @0x7f5d2c4ccc00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f5d2c4ccc80
+  References: 
+  Referring: choose_genre/81 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+genres/78 (genres) @0x7f5d2c4ccb80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f5d2c4ccc00
+  References: 
+  Referring: buttoncallback/83 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+SystemCoreClockUpdate/77 (SystemCoreClockUpdate) @0x7f5d2cd30ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_CheckChar/76 (ITM_CheckChar) @0x7f5d2cd305a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_ReceiveChar/75 (ITM_ReceiveChar) @0x7f5d2cd30438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_SendChar/74 (ITM_SendChar) @0x7f5d2cd302d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SysTick_Config/73 (SysTick_Config) @0x7f5d2cd30000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x1796a00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/85 
+  Calls: __NVIC_SetPriority/58 
+SCB_GetFPUType/72 (SCB_GetFPUType) @0x7f5d2cd24e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Load/71 (ARM_MPU_Load) @0x7f5d2cd24ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_OrderedMemcpy/70 (ARM_MPU_OrderedMemcpy) @0x7f5d2cd24b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_SetRegionEx/69 (ARM_MPU_SetRegionEx) @0x7f5d2cd249d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_SetRegion/68 (ARM_MPU_SetRegion) @0x7f5d2cd24870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_ClrRegion/67 (ARM_MPU_ClrRegion) @0x7f5d2cd24708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Disable/66 (ARM_MPU_Disable) @0x7f5d2cd245a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Enable/65 (ARM_MPU_Enable) @0x7f5d2cd24438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SystemReset/64 (__NVIC_SystemReset) @0x7f5d2cd16ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetVector/63 (__NVIC_GetVector) @0x7f5d2cd16b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetVector/62 (__NVIC_SetVector) @0x7f5d2cd169d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+NVIC_DecodePriority/61 (NVIC_DecodePriority) @0x7f5d2cd16870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+NVIC_EncodePriority/60 (NVIC_EncodePriority) @0x7f5d2cd16708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPriority/59 (__NVIC_GetPriority) @0x7f5d2cd165a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPriority/58 (__NVIC_SetPriority) @0x7f5d2cd16438
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x1796a00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SysTick_Config/73 
+  Calls: 
+__NVIC_GetActive/57 (__NVIC_GetActive) @0x7f5d2cd162d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_ClearPendingIRQ/56 (__NVIC_ClearPendingIRQ) @0x7f5d2cd16168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPendingIRQ/55 (__NVIC_SetPendingIRQ) @0x7f5d2cd16000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPendingIRQ/54 (__NVIC_GetPendingIRQ) @0x7f5d2cd0ae10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_DisableIRQ/53 (__NVIC_DisableIRQ) @0x7f5d2cd0aca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetEnableIRQ/52 (__NVIC_GetEnableIRQ) @0x7f5d2cd0ab40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_EnableIRQ/51 (__NVIC_EnableIRQ) @0x7f5d2cd0a9d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPriorityGrouping/50 (__NVIC_GetPriorityGrouping) @0x7f5d2cd0a870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPriorityGrouping/49 (__NVIC_SetPriorityGrouping) @0x7f5d2cd0a708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_FPSCR/48 (__set_FPSCR) @0x7f5d2ccbb9d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_FPSCR/47 (__get_FPSCR) @0x7f5d2ccbb870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_FAULTMASK/46 (__set_FAULTMASK) @0x7f5d2ccbb708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_FAULTMASK/45 (__get_FAULTMASK) @0x7f5d2ccbb5a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_BASEPRI_MAX/44 (__set_BASEPRI_MAX) @0x7f5d2ccbb438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_BASEPRI/43 (__set_BASEPRI) @0x7f5d2ccbb2d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_BASEPRI/42 (__get_BASEPRI) @0x7f5d2ccbb168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__disable_fault_irq/41 (__disable_fault_irq) @0x7f5d2ccbb000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__enable_fault_irq/40 (__enable_fault_irq) @0x7f5d2ccb4e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_PRIMASK/39 (__set_PRIMASK) @0x7f5d2ccb4ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_PRIMASK/38 (__get_PRIMASK) @0x7f5d2ccb4b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_MSP/37 (__set_MSP) @0x7f5d2ccb49d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_MSP/36 (__get_MSP) @0x7f5d2ccb4870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_PSP/35 (__set_PSP) @0x7f5d2ccb4708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_PSP/34 (__get_PSP) @0x7f5d2ccb45a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_xPSR/33 (__get_xPSR) @0x7f5d2ccb4438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_APSR/32 (__get_APSR) @0x7f5d2ccb42d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_IPSR/31 (__get_IPSR) @0x7f5d2ccb4168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_CONTROL/30 (__set_CONTROL) @0x7f5d2ccb4000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_CONTROL/29 (__get_CONTROL) @0x7f5d2ccace10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__disable_irq/28 (__disable_irq) @0x7f5d2ccacca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__enable_irq/27 (__enable_irq) @0x7f5d2ccacb40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRT/26 (__STRT) @0x7f5d2ccac9d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRHT/25 (__STRHT) @0x7f5d2ccac870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRBT/24 (__STRBT) @0x7f5d2ccac708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRT/23 (__LDRT) @0x7f5d2ccac5a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRHT/22 (__LDRHT) @0x7f5d2ccac438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRBT/21 (__LDRBT) @0x7f5d2ccac2d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__RRX/20 (__RRX) @0x7f5d2ccac168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__CLREX/19 (__CLREX) @0x7f5d2ccac000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXW/18 (__STREXW) @0x7f5d2cca2e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXH/17 (__STREXH) @0x7f5d2cca2ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXB/16 (__STREXB) @0x7f5d2cca2b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXW/15 (__LDREXW) @0x7f5d2cca29d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXH/14 (__LDREXH) @0x7f5d2cca2870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXB/13 (__LDREXB) @0x7f5d2cca2708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__CLZ/12 (__CLZ) @0x7f5d2cca25a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__RBIT/11 (__RBIT) @0x7f5d2cca2438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__ROR/10 (__ROR) @0x7f5d2cca22d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REVSH/9 (__REVSH) @0x7f5d2cca2168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REV16/8 (__REV16) @0x7f5d2cca2000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REV/7 (__REV) @0x7f5d2cc99e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__DMB/6 (__DMB) @0x7f5d2cc99ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__DSB/5 (__DSB) @0x7f5d2cc99b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__ISB/4 (__ISB) @0x7f5d2cc999d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__cmsis_start/3 (__cmsis_start) @0x7f5d2cc99708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+_putchar_unlocked/2 (_putchar_unlocked) @0x7f5d2cc12e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+_getchar_unlocked/1 (_getchar_unlocked) @0x7f5d2cc12ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__sputc_r/0 (__sputc_r) @0x7f5d2cc12b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: SystemCoreClockUpdate ITM_CheckChar ITM_ReceiveChar ITM_SendChar SCB_GetFPUType ARM_MPU_Load ARM_MPU_OrderedMemcpy ARM_MPU_SetRegionEx ARM_MPU_SetRegion ARM_MPU_ClrRegion ARM_MPU_Disable ARM_MPU_Enable __NVIC_SystemReset __NVIC_GetVector __NVIC_SetVector NVIC_DecodePriority NVIC_EncodePriority __NVIC_GetPriority __NVIC_GetActive __NVIC_ClearPendingIRQ __NVIC_SetPendingIRQ __NVIC_GetPendingIRQ __NVIC_DisableIRQ __NVIC_GetEnableIRQ __NVIC_EnableIRQ __NVIC_GetPriorityGrouping __NVIC_SetPriorityGrouping __set_FPSCR __get_FPSCR __set_FAULTMASK __get_FAULTMASK __set_BASEPRI_MAX __set_BASEPRI __get_BASEPRI __disable_fault_irq __enable_fault_irq __set_PRIMASK __get_PRIMASK __set_MSP __get_MSP __set_PSP __get_PSP __get_xPSR __get_APSR __get_IPSR __set_CONTROL __get_CONTROL __disable_irq __enable_irq __STRT __STRHT __STRBT __LDRT __LDRHT __LDRBT __RRX __CLREX __STREXW __STREXH __STREXB __LDREXW __LDREXH __LDREXB __CLZ __RBIT __ROR __REVSH __REV16 __REV __DMB __DSB __ISB __cmsis_start _putchar_unlocked _getchar_unlocked __sputc_r
+
+Reclaimed Symbol table:
+
+SystemCoreClock/100 (SystemCoreClock) @0x7f5d2c4dba80
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: main/85 (read)
+  Availability: not-ready
+  Varpool flags:
+ClockSetCoreClock/99 (ClockSetCoreClock) @0x7f5d2c4e2e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/85 
+  Calls: 
+LCD_ClearAll/98 (LCD_ClearAll) @0x7f5d2c4e2ca8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_SetAll/97 (LCD_SetAll) @0x7f5d2c4e2b40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_Init/96 (LCD_Init) @0x7f5d2c4e29d8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+PWM_Start/95 (PWM_Start) @0x7f5d2c4e2870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+PWM_Write/94 (PWM_Write) @0x7f5d2c4e2708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/85 config_ios/84 
+  Calls: 
+PWM_Init/93 (PWM_Init) @0x7f5d2c4e25a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+Button_SetCallback/92 (Button_SetCallback) @0x7f5d2c4e2438
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+Button_Init/91 (Button_Init) @0x7f5d2c4e22d0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LED_Init/90 (LED_Init) @0x7f5d2c4e2168
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_WriteAlphanumericDisplay/89 (LCD_WriteAlphanumericDisplay) @0x7f5d2c4e2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: buttoncallback/83 
+  Calls: 
+LED_Toggle/88 (LED_Toggle) @0x7f5d2c4d0e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/85 buttoncallback/83 
+  Calls: 
+Button_ReadReleased/87 (Button_ReadReleased) @0x7f5d2c4d0ca8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: buttoncallback/83 
+  Calls: 
+counter/86 (counter) @0x7f5d2c4db300
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SysTick_Handler/82 (read)SysTick_Handler/82 (read)SysTick_Handler/82 (write)SysTick_Handler/82 (write)
+  Availability: not-ready
+  Varpool flags: initialized
+main/85 (main) @0x7f5d2c4d0b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: SystemCoreClock/100 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: PWM_Write/94 LED_Toggle/88 SysTick_Config/73 config_ios/84 ClockSetCoreClock/99 
+config_ios/84 (config_ios) @0x7f5d2c4d09d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: buttoncallback/83 (addr)
+  Referring: 
+  Function flags: body
+  Called by: main/85 
+  Calls: LCD_ClearAll/98 LCD_SetAll/97 LCD_Init/96 PWM_Start/95 PWM_Write/94 PWM_Init/93 Button_SetCallback/92 Button_Init/91 LED_Init/90 
+buttoncallback/83 (buttoncallback) @0x7f5d2c4d0870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Address is taken.
+  References: current_genre/80 (read)genres/78 (read)
+  Referring: config_ios/84 (addr)
+  Function flags: body
+  Called by: 
+  Calls: choose_genre/81 LCD_WriteAlphanumericDisplay/89 LED_Toggle/88 Button_ReadReleased/87 
+SysTick_Handler/82 (SysTick_Handler) @0x7f5d2c4d0708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: counter/86 (read)counter/86 (read)counter/86 (write)counter/86 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+choose_genre/81 (choose_genre) @0x7f5d2c4d05a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: current_genre/80 (read)current_genre/80 (write)current_genre/80 (read)len_genres/79 (read)current_genre/80 (write)
+  Referring: 
+  Function flags: body
+  Called by: buttoncallback/83 
+  Calls: 
+current_genre/80 (current_genre) @0x7f5d2c4ccc80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: choose_genre/81 (read)choose_genre/81 (write)choose_genre/81 (read)choose_genre/81 (write)buttoncallback/83 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+len_genres/79 (len_genres) @0x7f5d2c4ccc00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: choose_genre/81 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+genres/78 (genres) @0x7f5d2c4ccb80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: buttoncallback/83 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+SysTick_Config/73 (SysTick_Config) @0x7f5d2cd30000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/85 
+  Calls: __NVIC_SetPriority/58 
+__NVIC_SetPriority/58 (__NVIC_SetPriority) @0x7f5d2cd16438
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SysTick_Config/73 
+  Calls: 
+
+
+Initial Symbol table:
+
+SystemCoreClock/100 (SystemCoreClock) @0x7f5d2c4dba80
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: main/85 (read)
+  Availability: not-ready
+  Varpool flags:
+ClockSetCoreClock/99 (ClockSetCoreClock) @0x7f5d2c4e2e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/85 
+  Calls: 
+LCD_ClearAll/98 (LCD_ClearAll) @0x7f5d2c4e2ca8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_SetAll/97 (LCD_SetAll) @0x7f5d2c4e2b40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_Init/96 (LCD_Init) @0x7f5d2c4e29d8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+PWM_Start/95 (PWM_Start) @0x7f5d2c4e2870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+PWM_Write/94 (PWM_Write) @0x7f5d2c4e2708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/85 config_ios/84 
+  Calls: 
+PWM_Init/93 (PWM_Init) @0x7f5d2c4e25a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+Button_SetCallback/92 (Button_SetCallback) @0x7f5d2c4e2438
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+Button_Init/91 (Button_Init) @0x7f5d2c4e22d0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LED_Init/90 (LED_Init) @0x7f5d2c4e2168
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_WriteAlphanumericDisplay/89 (LCD_WriteAlphanumericDisplay) @0x7f5d2c4e2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: buttoncallback/83 
+  Calls: 
+LED_Toggle/88 (LED_Toggle) @0x7f5d2c4d0e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/85 buttoncallback/83 
+  Calls: 
+Button_ReadReleased/87 (Button_ReadReleased) @0x7f5d2c4d0ca8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: buttoncallback/83 
+  Calls: 
+counter.7308/86 (counter) @0x7f5d2c4db300
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SysTick_Handler/82 (read)SysTick_Handler/82 (read)SysTick_Handler/82 (write)SysTick_Handler/82 (write)
+  Availability: not-ready
+  Varpool flags: initialized
+main/85 (main) @0x7f5d2c4d0b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: SystemCoreClock/100 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: PWM_Write/94 LED_Toggle/88 SysTick_Config/73 config_ios/84 ClockSetCoreClock/99 
+config_ios/84 (config_ios) @0x7f5d2c4d09d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: buttoncallback/83 (addr)
+  Referring: 
+  Function flags: body
+  Called by: main/85 
+  Calls: LCD_ClearAll/98 LCD_SetAll/97 LCD_Init/96 PWM_Start/95 PWM_Write/94 PWM_Init/93 Button_SetCallback/92 Button_Init/91 LED_Init/90 
+buttoncallback/83 (buttoncallback) @0x7f5d2c4d0870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Address is taken.
+  References: current_genre/80 (read)genres/78 (read)
+  Referring: config_ios/84 (addr)
+  Function flags: body
+  Called by: 
+  Calls: choose_genre/81 LCD_WriteAlphanumericDisplay/89 LED_Toggle/88 Button_ReadReleased/87 
+SysTick_Handler/82 (SysTick_Handler) @0x7f5d2c4d0708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: counter.7308/86 (read)counter.7308/86 (read)counter.7308/86 (write)counter.7308/86 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+choose_genre/81 (choose_genre) @0x7f5d2c4d05a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: current_genre/80 (read)current_genre/80 (write)current_genre/80 (read)len_genres/79 (read)current_genre/80 (write)
+  Referring: 
+  Function flags: body
+  Called by: buttoncallback/83 
+  Calls: 
+current_genre/80 (current_genre) @0x7f5d2c4ccc80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: choose_genre/81 (read)choose_genre/81 (write)choose_genre/81 (read)choose_genre/81 (write)buttoncallback/83 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+len_genres/79 (len_genres) @0x7f5d2c4ccc00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: choose_genre/81 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+genres/78 (genres) @0x7f5d2c4ccb80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: buttoncallback/83 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+SysTick_Config/73 (SysTick_Config) @0x7f5d2cd30000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/85 
+  Calls: __NVIC_SetPriority/58 
+__NVIC_SetPriority/58 (__NVIC_SetPriority) @0x7f5d2cd16438
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SysTick_Config/73 
+  Calls: 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+SystemCoreClock/100 (SystemCoreClock) @0x7f5d2c4dba80
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: main/85 (read)
+  Availability: not-ready
+  Varpool flags:
+ClockSetCoreClock/99 (ClockSetCoreClock) @0x7f5d2c4e2e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/85 
+  Calls: 
+LCD_ClearAll/98 (LCD_ClearAll) @0x7f5d2c4e2ca8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_SetAll/97 (LCD_SetAll) @0x7f5d2c4e2b40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_Init/96 (LCD_Init) @0x7f5d2c4e29d8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+PWM_Start/95 (PWM_Start) @0x7f5d2c4e2870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+PWM_Write/94 (PWM_Write) @0x7f5d2c4e2708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/85 config_ios/84 
+  Calls: 
+PWM_Init/93 (PWM_Init) @0x7f5d2c4e25a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+Button_SetCallback/92 (Button_SetCallback) @0x7f5d2c4e2438
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+Button_Init/91 (Button_Init) @0x7f5d2c4e22d0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LED_Init/90 (LED_Init) @0x7f5d2c4e2168
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_WriteAlphanumericDisplay/89 (LCD_WriteAlphanumericDisplay) @0x7f5d2c4e2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: buttoncallback/83 
+  Calls: 
+LED_Toggle/88 (LED_Toggle) @0x7f5d2c4d0e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/85 buttoncallback/83 
+  Calls: 
+Button_ReadReleased/87 (Button_ReadReleased) @0x7f5d2c4d0ca8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: buttoncallback/83 
+  Calls: 
+counter.7308/86 (counter) @0x7f5d2c4db300
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SysTick_Handler/82 (read)SysTick_Handler/82 (read)SysTick_Handler/82 (write)SysTick_Handler/82 (write)
+  Availability: not-ready
+  Varpool flags: initialized
+main/85 (main) @0x7f5d2c4d0b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: SystemCoreClock/100 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: PWM_Write/94 LED_Toggle/88 SysTick_Config/73 config_ios/84 ClockSetCoreClock/99 
+config_ios/84 (config_ios) @0x7f5d2c4d09d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: buttoncallback/83 (addr)
+  Referring: 
+  Function flags: body
+  Called by: main/85 
+  Calls: LCD_ClearAll/98 LCD_SetAll/97 LCD_Init/96 PWM_Start/95 PWM_Write/94 PWM_Init/93 Button_SetCallback/92 Button_Init/91 LED_Init/90 
+buttoncallback/83 (buttoncallback) @0x7f5d2c4d0870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Address is taken.
+  References: current_genre/80 (read)genres/78 (read)
+  Referring: config_ios/84 (addr)
+  Function flags: body
+  Called by: 
+  Calls: choose_genre/81 LCD_WriteAlphanumericDisplay/89 LED_Toggle/88 Button_ReadReleased/87 
+SysTick_Handler/82 (SysTick_Handler) @0x7f5d2c4d0708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: counter.7308/86 (read)counter.7308/86 (read)counter.7308/86 (write)counter.7308/86 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+choose_genre/81 (choose_genre) @0x7f5d2c4d05a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: current_genre/80 (read)current_genre/80 (write)current_genre/80 (read)len_genres/79 (read)current_genre/80 (write)
+  Referring: 
+  Function flags: body
+  Called by: buttoncallback/83 
+  Calls: 
+current_genre/80 (current_genre) @0x7f5d2c4ccc80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: choose_genre/81 (read)choose_genre/81 (write)choose_genre/81 (read)choose_genre/81 (write)buttoncallback/83 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+len_genres/79 (len_genres) @0x7f5d2c4ccc00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: choose_genre/81 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+genres/78 (genres) @0x7f5d2c4ccb80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: buttoncallback/83 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+SysTick_Config/73 (SysTick_Config) @0x7f5d2cd30000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/85 
+  Calls: __NVIC_SetPriority/58 
+__NVIC_SetPriority/58 (__NVIC_SetPriority) @0x7f5d2cd16438
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SysTick_Config/73 
+  Calls: 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+SystemCoreClock/100 (SystemCoreClock) @0x7f5d2c4dba80
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public common
+  References: 
+  Referring: main/85 (read)
+  Availability: not_available
+  Varpool flags:
+ClockSetCoreClock/99 (ClockSetCoreClock) @0x7f5d2c4e2e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/85 
+  Calls: 
+LCD_ClearAll/98 (LCD_ClearAll) @0x7f5d2c4e2ca8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_SetAll/97 (LCD_SetAll) @0x7f5d2c4e2b40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_Init/96 (LCD_Init) @0x7f5d2c4e29d8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+PWM_Start/95 (PWM_Start) @0x7f5d2c4e2870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+PWM_Write/94 (PWM_Write) @0x7f5d2c4e2708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/85 config_ios/84 
+  Calls: 
+PWM_Init/93 (PWM_Init) @0x7f5d2c4e25a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+Button_SetCallback/92 (Button_SetCallback) @0x7f5d2c4e2438
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+Button_Init/91 (Button_Init) @0x7f5d2c4e22d0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LED_Init/90 (LED_Init) @0x7f5d2c4e2168
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: config_ios/84 
+  Calls: 
+LCD_WriteAlphanumericDisplay/89 (LCD_WriteAlphanumericDisplay) @0x7f5d2c4e2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: buttoncallback/83 
+  Calls: 
+LED_Toggle/88 (LED_Toggle) @0x7f5d2c4d0e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/85 buttoncallback/83 
+  Calls: 
+Button_ReadReleased/87 (Button_ReadReleased) @0x7f5d2c4d0ca8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: buttoncallback/83 
+  Calls: 
+counter.7308/86 (counter) @0x7f5d2c4db300
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SysTick_Handler/82 (read)SysTick_Handler/82 (read)SysTick_Handler/82 (write)SysTick_Handler/82 (write)
+  Availability: available
+  Varpool flags: initialized
+main/85 (main) @0x7f5d2c4d0b40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SystemCoreClock/100 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: PWM_Write/94 LED_Toggle/88 SysTick_Config/73 config_ios/84 ClockSetCoreClock/99 
+config_ios/84 (config_ios) @0x7f5d2c4d09d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: buttoncallback/83 (addr)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/85 
+  Calls: LCD_ClearAll/98 LCD_SetAll/97 LCD_Init/96 PWM_Start/95 PWM_Write/94 PWM_Init/93 Button_SetCallback/92 Button_Init/91 LED_Init/90 
+buttoncallback/83 (buttoncallback) @0x7f5d2c4d0870
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  Address is taken.
+  References: current_genre/80 (read)genres/78 (read)
+  Referring: config_ios/84 (addr)
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: choose_genre/81 LCD_WriteAlphanumericDisplay/89 LED_Toggle/88 Button_ReadReleased/87 
+SysTick_Handler/82 (SysTick_Handler) @0x7f5d2c4d0708
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: counter.7308/86 (read)counter.7308/86 (read)counter.7308/86 (write)counter.7308/86 (write)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+choose_genre/81 (choose_genre) @0x7f5d2c4d05a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: current_genre/80 (read)current_genre/80 (write)current_genre/80 (read)len_genres/79 (read)current_genre/80 (write)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: buttoncallback/83 
+  Calls: 
+current_genre/80 (current_genre) @0x7f5d2c4ccc80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: choose_genre/81 (write)choose_genre/81 (read)choose_genre/81 (write)choose_genre/81 (read)buttoncallback/83 (read)
+  Availability: available
+  Varpool flags: initialized
+len_genres/79 (len_genres) @0x7f5d2c4ccc00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: choose_genre/81 (read)
+  Availability: available
+  Varpool flags: initialized
+genres/78 (genres) @0x7f5d2c4ccb80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: buttoncallback/83 (read)
+  Availability: available
+  Varpool flags: initialized
+SysTick_Config/73 (SysTick_Config) @0x7f5d2cd30000
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: main/85 
+  Calls: __NVIC_SetPriority/58 
+__NVIC_SetPriority/58 (__NVIC_SetPriority) @0x7f5d2cd16438
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: SysTick_Config/73 
+  Calls: 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: counter.7308 current_genre len_genres genres
+Removing variables:
+
+Final Symbol table:
+
+SystemCoreClock/100 (SystemCoreClock) @0x7f5d2c4dba80
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public common
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+ClockSetCoreClock/99 (ClockSetCoreClock) @0x7f5d2c4e2e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_ClearAll/98 (LCD_ClearAll) @0x7f5d2c4e2ca8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_SetAll/97 (LCD_SetAll) @0x7f5d2c4e2b40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_Init/96 (LCD_Init) @0x7f5d2c4e29d8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+PWM_Start/95 (PWM_Start) @0x7f5d2c4e2870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+PWM_Write/94 (PWM_Write) @0x7f5d2c4e2708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+PWM_Init/93 (PWM_Init) @0x7f5d2c4e25a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Button_SetCallback/92 (Button_SetCallback) @0x7f5d2c4e2438
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Button_Init/91 (Button_Init) @0x7f5d2c4e22d0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+LED_Init/90 (LED_Init) @0x7f5d2c4e2168
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_WriteAlphanumericDisplay/89 (LCD_WriteAlphanumericDisplay) @0x7f5d2c4e2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+LED_Toggle/88 (LED_Toggle) @0x7f5d2c4d0e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Button_ReadReleased/87 (Button_ReadReleased) @0x7f5d2c4d0ca8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+counter.7308/86 (counter) @0x7f5d2c4db300
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.counter.7308 (implicit_section)
+  Aux: @0x1
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+main/85 (main) @0x7f5d2c4d0b40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.main (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+config_ios/84 (config_ios) @0x7f5d2c4d09d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.config_ios (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+buttoncallback/83 (buttoncallback) @0x7f5d2c4d0870
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.buttoncallback (implicit_section)
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SysTick_Handler/82 (SysTick_Handler) @0x7f5d2c4d0708
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SysTick_Handler (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+choose_genre/81 (choose_genre) @0x7f5d2c4d05a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.choose_genre (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+current_genre/80 (current_genre) @0x7f5d2c4ccc80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.current_genre (implicit_section)
+  Aux: @0x7f5d2c4db300
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+len_genres/79 (len_genres) @0x7f5d2c4ccc00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.data.len_genres (implicit_section)
+  Aux: @0x7f5d2c4ccc80
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+genres/78 (genres) @0x7f5d2c4ccb80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.data.genres (implicit_section)
+  Aux: @0x7f5d2c4ccc00
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+SysTick_Config/73 (SysTick_Config) @0x7f5d2cd30000
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.SysTick_Config (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+__NVIC_SetPriority/58 (__NVIC_SetPriority) @0x7f5d2cd16438
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.__NVIC_SetPriority (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 

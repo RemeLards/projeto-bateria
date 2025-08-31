@@ -1,0 +1,2089 @@
+Trivially needed symbols: LCD_Unfreeze LCD_Freeze LCD_WriteSpecial LCD_WriteSegment LCD_WriteSegment2 LCD_WriteSegmentMask LCD_SetContrast LCD_SetVoltage ln2 LCD_SetAll LCD_ClearAll LCD_WriteString LCD_WriteNumericDisplay LCD_WriteAlphanumericDisplay LCD_WriteChar LCD_Config LCD_Init LCD_SetClock SetLFAClock segdatahigh segdatalow tablcdclear tablcdspecial com_encoding seg_encoding tablcd segments7forchar segments14forchar lcdclock_set
+
+
+Initial Symbol table:
+
+SystemCoreClock/104 (SystemCoreClock) @0x7f2fcc5a6980
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: SetLFAClock/85 (read)
+  Availability: not-ready
+  Varpool flags:
+LCD_Unfreeze/103 (LCD_Unfreeze) @0x7f2fcc5a82d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x1796a00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_Freeze/102 (LCD_Freeze) @0x7f2fcc5a8168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc5a82d0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_WriteSpecial/101 (LCD_WriteSpecial) @0x7f2fcc5a8000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc5a8168
+  References: tablcdspecial/81 (read)seg_encoding/79 (read)tablcd/78 (read)com_encoding/80 (read)seg_encoding/79 (read)seg_encoding/79 (read)segdatalow/83 (read)tablcdclear/82 (read)segdatalow/83 (read)segdatahigh/84 (read)tablcdclear/82 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegment/100 (LCD_WriteSegment) @0x7f2fcc595e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc5a8000
+  References: seg_encoding/79 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegment2/99 (LCD_WriteSegment2) @0x7f2fcc595ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc595e10
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegmentMask/98 (LCD_WriteSegmentMask) @0x7f2fcc595b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc595ca8
+  References: com_encoding/80 (read)segdatalow/83 (read)segdatalow/83 (read)segdatahigh/84 (read)segdatahigh/84 (read)segdatalow/83 (read)segdatalow/83 (read)segdatahigh/84 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: LCD_WriteSpecial/101 LCD_WriteSegment/100 LCD_WriteSegment2/99 
+  Calls: 
+LCD_SetContrast/97 (LCD_SetContrast) @0x7f2fcc5959d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc595b40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+LCD_SetVoltage/96 (LCD_SetVoltage) @0x7f2fcc595870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc5959d8
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: ln2/95 
+ln2/95 (ln2) @0x7f2fcc595708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f2fcc595870
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_SetVoltage/96 
+  Calls: 
+LCD_SetAll/94 (LCD_SetAll) @0x7f2fcc5955a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc595708
+  References: segdatalow/83 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_ClearAll/93 (LCD_ClearAll) @0x7f2fcc595438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc5955a0
+  References: segdatalow/83 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_WriteString/92 (LCD_WriteString) @0x7f2fcc5952d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc595438
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteNumericDisplay/91 (LCD_WriteNumericDisplay) @0x7f2fcc595168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc5952d0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteAlphanumericDisplay/90 (LCD_WriteAlphanumericDisplay) @0x7f2fcc595000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc595168
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteChar/89 (LCD_WriteChar) @0x7f2fcc57a168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc595000
+  References: segments14forchar/76 (read)segments7forchar/77 (read)tablcd/78 (read)com_encoding/80 (read)seg_encoding/79 (read)seg_encoding/79 (read)com_encoding/80 (read)segdatalow/83 (read)tablcdclear/82 (read)segdatalow/83 (read)segdatahigh/84 (read)tablcdclear/82 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: LCD_WriteString/92 LCD_WriteString/92 LCD_WriteNumericDisplay/91 LCD_WriteNumericDisplay/91 LCD_WriteAlphanumericDisplay/90 LCD_WriteAlphanumericDisplay/90 
+  Calls: 
+LCD_Config/88 (LCD_Config) @0x7f2fcc57ae10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc57a168
+  References: lcdclock_set/75 (read)lcdclock_set/75 (write)seg_encoding/79 (read)seg_encoding/79 (read)
+  Referring: 
+  Function flags: body
+  Called by: LCD_Init/87 
+  Calls: LCD_SetContrast/97 LCD_SetVoltage/96 LCD_SetClock/86 SetLFAClock/85 
+LCD_Init/87 (LCD_Init) @0x7f2fcc57aca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc57ae10
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_Config/88 
+LCD_SetClock/86 (LCD_SetClock) @0x7f2fcc57ab40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc57aca8
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+SetLFAClock/85 (SetLFAClock) @0x7f2fcc57a9d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc57ab40
+  References: SystemCoreClock/104 (read)lcdclock_set/75 (write)
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+segdatahigh/84 (segdatahigh) @0x7f2fcc93b880
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc57a9d8
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_ClearAll/93 (read)LCD_SetAll/94 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+segdatalow/83 (segdatalow) @0x7f2fcc93b800
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f2fcc93b880
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_ClearAll/93 (read)LCD_SetAll/94 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tablcdclear/82 (tablcdclear) @0x7f2fcc93b780
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f2fcc93b800
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tablcdspecial/81 (tablcdspecial) @0x7f2fcc93b700
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f2fcc93b780
+  References: 
+  Referring: LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+com_encoding/80 (com_encoding) @0x7f2fcc93b680
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f2fcc93b700
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+seg_encoding/79 (seg_encoding) @0x7f2fcc93b600
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f2fcc93b680
+  References: 
+  Referring: LCD_Config/88 (read)LCD_Config/88 (read)LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSegment/100 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tablcd/78 (tablcd) @0x7f2fcc93b580
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f2fcc93b600
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+segments7forchar/77 (segments7forchar) @0x7f2fcc93b500
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f2fcc93b580
+  References: 
+  Referring: LCD_WriteChar/89 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+segments14forchar/76 (segments14forchar) @0x7f2fcc93b480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f2fcc93b500
+  References: 
+  Referring: LCD_WriteChar/89 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+lcdclock_set/75 (lcdclock_set) @0x7f2fcc93b400
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f2fcc93b480
+  References: 
+  Referring: SetLFAClock/85 (write)LCD_Config/88 (read)LCD_Config/88 (write)
+  Availability: not-ready
+  Varpool flags: initialized
+SystemCoreClockUpdate/74 (SystemCoreClockUpdate) @0x7f2fcc92ce10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_CheckChar/73 (ITM_CheckChar) @0x7f2fcc92c708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_ReceiveChar/72 (ITM_ReceiveChar) @0x7f2fcc92c5a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_SendChar/71 (ITM_SendChar) @0x7f2fcc92c438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SysTick_Config/70 (SysTick_Config) @0x7f2fcc92c168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SCB_GetFPUType/69 (SCB_GetFPUType) @0x7f2fcc92c000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Load/68 (ARM_MPU_Load) @0x7f2fcc924e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_OrderedMemcpy/67 (ARM_MPU_OrderedMemcpy) @0x7f2fcc924ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_SetRegionEx/66 (ARM_MPU_SetRegionEx) @0x7f2fcc924b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_SetRegion/65 (ARM_MPU_SetRegion) @0x7f2fcc9249d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_ClrRegion/64 (ARM_MPU_ClrRegion) @0x7f2fcc924870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Disable/63 (ARM_MPU_Disable) @0x7f2fcc924708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Enable/62 (ARM_MPU_Enable) @0x7f2fcc9245a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SystemReset/61 (__NVIC_SystemReset) @0x7f2fcc913e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetVector/60 (__NVIC_GetVector) @0x7f2fcc913ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetVector/59 (__NVIC_SetVector) @0x7f2fcc913b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+NVIC_DecodePriority/58 (NVIC_DecodePriority) @0x7f2fcc9139d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+NVIC_EncodePriority/57 (NVIC_EncodePriority) @0x7f2fcc913870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPriority/56 (__NVIC_GetPriority) @0x7f2fcc913708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPriority/55 (__NVIC_SetPriority) @0x7f2fcc9135a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetActive/54 (__NVIC_GetActive) @0x7f2fcc913438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_ClearPendingIRQ/53 (__NVIC_ClearPendingIRQ) @0x7f2fcc9132d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPendingIRQ/52 (__NVIC_SetPendingIRQ) @0x7f2fcc913168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPendingIRQ/51 (__NVIC_GetPendingIRQ) @0x7f2fcc913000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_DisableIRQ/50 (__NVIC_DisableIRQ) @0x7f2fcc903e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetEnableIRQ/49 (__NVIC_GetEnableIRQ) @0x7f2fcc903ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_EnableIRQ/48 (__NVIC_EnableIRQ) @0x7f2fcc903b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPriorityGrouping/47 (__NVIC_GetPriorityGrouping) @0x7f2fcc9039d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPriorityGrouping/46 (__NVIC_SetPriorityGrouping) @0x7f2fcc903870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_FPSCR/45 (__set_FPSCR) @0x7f2fcc8b8b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_FPSCR/44 (__get_FPSCR) @0x7f2fcc8b89d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_FAULTMASK/43 (__set_FAULTMASK) @0x7f2fcc8b8870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_FAULTMASK/42 (__get_FAULTMASK) @0x7f2fcc8b8708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_BASEPRI_MAX/41 (__set_BASEPRI_MAX) @0x7f2fcc8b85a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_BASEPRI/40 (__set_BASEPRI) @0x7f2fcc8b8438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_BASEPRI/39 (__get_BASEPRI) @0x7f2fcc8b82d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__disable_fault_irq/38 (__disable_fault_irq) @0x7f2fcc8b8168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__enable_fault_irq/37 (__enable_fault_irq) @0x7f2fcc8b8000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_PRIMASK/36 (__set_PRIMASK) @0x7f2fcc8b0e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_PRIMASK/35 (__get_PRIMASK) @0x7f2fcc8b0ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_MSP/34 (__set_MSP) @0x7f2fcc8b0b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_MSP/33 (__get_MSP) @0x7f2fcc8b09d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_PSP/32 (__set_PSP) @0x7f2fcc8b0870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_PSP/31 (__get_PSP) @0x7f2fcc8b0708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_xPSR/30 (__get_xPSR) @0x7f2fcc8b05a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_APSR/29 (__get_APSR) @0x7f2fcc8b0438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_IPSR/28 (__get_IPSR) @0x7f2fcc8b02d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_CONTROL/27 (__set_CONTROL) @0x7f2fcc8b0168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_CONTROL/26 (__get_CONTROL) @0x7f2fcc8b0000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__disable_irq/25 (__disable_irq) @0x7f2fcc8a3e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__enable_irq/24 (__enable_irq) @0x7f2fcc8a3ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRT/23 (__STRT) @0x7f2fcc8a3b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRHT/22 (__STRHT) @0x7f2fcc8a39d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRBT/21 (__STRBT) @0x7f2fcc8a3870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRT/20 (__LDRT) @0x7f2fcc8a3708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRHT/19 (__LDRHT) @0x7f2fcc8a35a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRBT/18 (__LDRBT) @0x7f2fcc8a3438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__RRX/17 (__RRX) @0x7f2fcc8a32d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__CLREX/16 (__CLREX) @0x7f2fcc8a3168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXW/15 (__STREXW) @0x7f2fcc8a3000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXH/14 (__STREXH) @0x7f2fcc89ce10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXB/13 (__STREXB) @0x7f2fcc89cca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXW/12 (__LDREXW) @0x7f2fcc89cb40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXH/11 (__LDREXH) @0x7f2fcc89c9d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXB/10 (__LDREXB) @0x7f2fcc89c870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__CLZ/9 (__CLZ) @0x7f2fcc89c708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__RBIT/8 (__RBIT) @0x7f2fcc89c5a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__ROR/7 (__ROR) @0x7f2fcc89c438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REVSH/6 (__REVSH) @0x7f2fcc89c2d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REV16/5 (__REV16) @0x7f2fcc89c168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REV/4 (__REV) @0x7f2fcc89c000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__DMB/3 (__DMB) @0x7f2fcc88fe10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__DSB/2 (__DSB) @0x7f2fcc88fca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__ISB/1 (__ISB) @0x7f2fcc88fb40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__cmsis_start/0 (__cmsis_start) @0x7f2fcc88f870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: SystemCoreClockUpdate ITM_CheckChar ITM_ReceiveChar ITM_SendChar SysTick_Config SCB_GetFPUType ARM_MPU_Load ARM_MPU_OrderedMemcpy ARM_MPU_SetRegionEx ARM_MPU_SetRegion ARM_MPU_ClrRegion ARM_MPU_Disable ARM_MPU_Enable __NVIC_SystemReset __NVIC_GetVector __NVIC_SetVector NVIC_DecodePriority NVIC_EncodePriority __NVIC_GetPriority __NVIC_SetPriority __NVIC_GetActive __NVIC_ClearPendingIRQ __NVIC_SetPendingIRQ __NVIC_GetPendingIRQ __NVIC_DisableIRQ __NVIC_GetEnableIRQ __NVIC_EnableIRQ __NVIC_GetPriorityGrouping __NVIC_SetPriorityGrouping __set_FPSCR __get_FPSCR __set_FAULTMASK __get_FAULTMASK __set_BASEPRI_MAX __set_BASEPRI __get_BASEPRI __disable_fault_irq __enable_fault_irq __set_PRIMASK __get_PRIMASK __set_MSP __get_MSP __set_PSP __get_PSP __get_xPSR __get_APSR __get_IPSR __set_CONTROL __get_CONTROL __disable_irq __enable_irq __STRT __STRHT __STRBT __LDRT __LDRHT __LDRBT __RRX __CLREX __STREXW __STREXH __STREXB __LDREXW __LDREXH __LDREXB __CLZ __RBIT __ROR __REVSH __REV16 __REV __DMB __DSB __ISB __cmsis_start
+
+Reclaimed Symbol table:
+
+SystemCoreClock/104 (SystemCoreClock) @0x7f2fcc5a6980
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: SetLFAClock/85 (read)
+  Availability: not-ready
+  Varpool flags:
+LCD_Unfreeze/103 (LCD_Unfreeze) @0x7f2fcc5a82d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_Freeze/102 (LCD_Freeze) @0x7f2fcc5a8168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_WriteSpecial/101 (LCD_WriteSpecial) @0x7f2fcc5a8000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tablcdspecial/81 (read)seg_encoding/79 (read)tablcd/78 (read)com_encoding/80 (read)seg_encoding/79 (read)seg_encoding/79 (read)segdatalow/83 (read)tablcdclear/82 (read)segdatalow/83 (read)segdatahigh/84 (read)tablcdclear/82 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegment/100 (LCD_WriteSegment) @0x7f2fcc595e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: seg_encoding/79 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegment2/99 (LCD_WriteSegment2) @0x7f2fcc595ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegmentMask/98 (LCD_WriteSegmentMask) @0x7f2fcc595b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: com_encoding/80 (read)segdatalow/83 (read)segdatalow/83 (read)segdatahigh/84 (read)segdatahigh/84 (read)segdatalow/83 (read)segdatalow/83 (read)segdatahigh/84 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: LCD_WriteSpecial/101 LCD_WriteSegment/100 LCD_WriteSegment2/99 
+  Calls: 
+LCD_SetContrast/97 (LCD_SetContrast) @0x7f2fcc5959d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+LCD_SetVoltage/96 (LCD_SetVoltage) @0x7f2fcc595870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: ln2/95 
+ln2/95 (ln2) @0x7f2fcc595708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_SetVoltage/96 
+  Calls: 
+LCD_SetAll/94 (LCD_SetAll) @0x7f2fcc5955a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: segdatalow/83 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_ClearAll/93 (LCD_ClearAll) @0x7f2fcc595438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: segdatalow/83 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_WriteString/92 (LCD_WriteString) @0x7f2fcc5952d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteNumericDisplay/91 (LCD_WriteNumericDisplay) @0x7f2fcc595168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteAlphanumericDisplay/90 (LCD_WriteAlphanumericDisplay) @0x7f2fcc595000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteChar/89 (LCD_WriteChar) @0x7f2fcc57a168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: segments14forchar/76 (read)segments7forchar/77 (read)tablcd/78 (read)com_encoding/80 (read)seg_encoding/79 (read)seg_encoding/79 (read)com_encoding/80 (read)segdatalow/83 (read)tablcdclear/82 (read)segdatalow/83 (read)segdatahigh/84 (read)tablcdclear/82 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: LCD_WriteString/92 LCD_WriteString/92 LCD_WriteNumericDisplay/91 LCD_WriteNumericDisplay/91 LCD_WriteAlphanumericDisplay/90 LCD_WriteAlphanumericDisplay/90 
+  Calls: 
+LCD_Config/88 (LCD_Config) @0x7f2fcc57ae10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lcdclock_set/75 (read)lcdclock_set/75 (write)seg_encoding/79 (read)seg_encoding/79 (read)
+  Referring: 
+  Function flags: body
+  Called by: LCD_Init/87 
+  Calls: LCD_SetContrast/97 LCD_SetVoltage/96 LCD_SetClock/86 SetLFAClock/85 
+LCD_Init/87 (LCD_Init) @0x7f2fcc57aca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_Config/88 
+LCD_SetClock/86 (LCD_SetClock) @0x7f2fcc57ab40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+SetLFAClock/85 (SetLFAClock) @0x7f2fcc57a9d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: SystemCoreClock/104 (read)lcdclock_set/75 (write)
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+segdatahigh/84 (segdatahigh) @0x7f2fcc93b880
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_ClearAll/93 (read)LCD_SetAll/94 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+segdatalow/83 (segdatalow) @0x7f2fcc93b800
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_ClearAll/93 (read)LCD_SetAll/94 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tablcdclear/82 (tablcdclear) @0x7f2fcc93b780
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tablcdspecial/81 (tablcdspecial) @0x7f2fcc93b700
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+com_encoding/80 (com_encoding) @0x7f2fcc93b680
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+seg_encoding/79 (seg_encoding) @0x7f2fcc93b600
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_Config/88 (read)LCD_Config/88 (read)LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSegment/100 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tablcd/78 (tablcd) @0x7f2fcc93b580
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+segments7forchar/77 (segments7forchar) @0x7f2fcc93b500
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+segments14forchar/76 (segments14forchar) @0x7f2fcc93b480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+lcdclock_set/75 (lcdclock_set) @0x7f2fcc93b400
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SetLFAClock/85 (write)LCD_Config/88 (read)LCD_Config/88 (write)
+  Availability: not-ready
+  Varpool flags: initialized
+
+
+Initial Symbol table:
+
+SystemCoreClock/104 (SystemCoreClock) @0x7f2fcc5a6980
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: SetLFAClock/85 (read)
+  Availability: not-ready
+  Varpool flags:
+LCD_Unfreeze/103 (LCD_Unfreeze) @0x7f2fcc5a82d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_Freeze/102 (LCD_Freeze) @0x7f2fcc5a8168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_WriteSpecial/101 (LCD_WriteSpecial) @0x7f2fcc5a8000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tablcdspecial/81 (read)seg_encoding/79 (read)tablcd/78 (read)com_encoding/80 (read)seg_encoding/79 (read)seg_encoding/79 (read)segdatalow/83 (read)tablcdclear/82 (read)segdatalow/83 (read)segdatahigh/84 (read)tablcdclear/82 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegment/100 (LCD_WriteSegment) @0x7f2fcc595e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: seg_encoding/79 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegment2/99 (LCD_WriteSegment2) @0x7f2fcc595ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegmentMask/98 (LCD_WriteSegmentMask) @0x7f2fcc595b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: com_encoding/80 (read)segdatalow/83 (read)segdatalow/83 (read)segdatahigh/84 (read)segdatahigh/84 (read)segdatalow/83 (read)segdatalow/83 (read)segdatahigh/84 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: LCD_WriteSpecial/101 LCD_WriteSegment/100 LCD_WriteSegment2/99 
+  Calls: 
+LCD_SetContrast/97 (LCD_SetContrast) @0x7f2fcc5959d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+LCD_SetVoltage/96 (LCD_SetVoltage) @0x7f2fcc595870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: ln2/95 
+ln2/95 (ln2) @0x7f2fcc595708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_SetVoltage/96 
+  Calls: 
+LCD_SetAll/94 (LCD_SetAll) @0x7f2fcc5955a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: segdatalow/83 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_ClearAll/93 (LCD_ClearAll) @0x7f2fcc595438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: segdatalow/83 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_WriteString/92 (LCD_WriteString) @0x7f2fcc5952d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteNumericDisplay/91 (LCD_WriteNumericDisplay) @0x7f2fcc595168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteAlphanumericDisplay/90 (LCD_WriteAlphanumericDisplay) @0x7f2fcc595000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteChar/89 (LCD_WriteChar) @0x7f2fcc57a168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: segments14forchar/76 (read)segments7forchar/77 (read)tablcd/78 (read)com_encoding/80 (read)seg_encoding/79 (read)seg_encoding/79 (read)com_encoding/80 (read)segdatalow/83 (read)tablcdclear/82 (read)segdatalow/83 (read)segdatahigh/84 (read)tablcdclear/82 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: LCD_WriteString/92 LCD_WriteString/92 LCD_WriteNumericDisplay/91 LCD_WriteNumericDisplay/91 LCD_WriteAlphanumericDisplay/90 LCD_WriteAlphanumericDisplay/90 
+  Calls: 
+LCD_Config/88 (LCD_Config) @0x7f2fcc57ae10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lcdclock_set/75 (read)lcdclock_set/75 (write)seg_encoding/79 (read)seg_encoding/79 (read)
+  Referring: 
+  Function flags: body
+  Called by: LCD_Init/87 
+  Calls: LCD_SetContrast/97 LCD_SetVoltage/96 LCD_SetClock/86 SetLFAClock/85 
+LCD_Init/87 (LCD_Init) @0x7f2fcc57aca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_Config/88 
+LCD_SetClock/86 (LCD_SetClock) @0x7f2fcc57ab40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+SetLFAClock/85 (SetLFAClock) @0x7f2fcc57a9d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: SystemCoreClock/104 (read)lcdclock_set/75 (write)
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+segdatahigh/84 (segdatahigh) @0x7f2fcc93b880
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_ClearAll/93 (read)LCD_SetAll/94 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+segdatalow/83 (segdatalow) @0x7f2fcc93b800
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_ClearAll/93 (read)LCD_SetAll/94 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tablcdclear/82 (tablcdclear) @0x7f2fcc93b780
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tablcdspecial/81 (tablcdspecial) @0x7f2fcc93b700
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+com_encoding/80 (com_encoding) @0x7f2fcc93b680
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+seg_encoding/79 (seg_encoding) @0x7f2fcc93b600
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_Config/88 (read)LCD_Config/88 (read)LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSegment/100 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tablcd/78 (tablcd) @0x7f2fcc93b580
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+segments7forchar/77 (segments7forchar) @0x7f2fcc93b500
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+segments14forchar/76 (segments14forchar) @0x7f2fcc93b480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+lcdclock_set/75 (lcdclock_set) @0x7f2fcc93b400
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SetLFAClock/85 (write)LCD_Config/88 (read)LCD_Config/88 (write)
+  Availability: not-ready
+  Varpool flags: initialized
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+SystemCoreClock/104 (SystemCoreClock) @0x7f2fcc5a6980
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: SetLFAClock/85 (read)
+  Availability: not-ready
+  Varpool flags:
+LCD_Unfreeze/103 (LCD_Unfreeze) @0x7f2fcc5a82d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_Freeze/102 (LCD_Freeze) @0x7f2fcc5a8168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_WriteSpecial/101 (LCD_WriteSpecial) @0x7f2fcc5a8000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tablcdspecial/81 (read)seg_encoding/79 (read)tablcd/78 (read)com_encoding/80 (read)seg_encoding/79 (read)seg_encoding/79 (read)segdatalow/83 (read)tablcdclear/82 (read)segdatalow/83 (read)segdatahigh/84 (read)tablcdclear/82 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegment/100 (LCD_WriteSegment) @0x7f2fcc595e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: seg_encoding/79 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegment2/99 (LCD_WriteSegment2) @0x7f2fcc595ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegmentMask/98 (LCD_WriteSegmentMask) @0x7f2fcc595b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: com_encoding/80 (read)segdatalow/83 (read)segdatalow/83 (read)segdatahigh/84 (read)segdatahigh/84 (read)segdatalow/83 (read)segdatalow/83 (read)segdatahigh/84 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: LCD_WriteSpecial/101 LCD_WriteSegment/100 LCD_WriteSegment2/99 
+  Calls: 
+LCD_SetContrast/97 (LCD_SetContrast) @0x7f2fcc5959d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+LCD_SetVoltage/96 (LCD_SetVoltage) @0x7f2fcc595870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: ln2/95 
+ln2/95 (ln2) @0x7f2fcc595708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_SetVoltage/96 
+  Calls: 
+LCD_SetAll/94 (LCD_SetAll) @0x7f2fcc5955a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: segdatalow/83 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_ClearAll/93 (LCD_ClearAll) @0x7f2fcc595438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: segdatalow/83 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_WriteString/92 (LCD_WriteString) @0x7f2fcc5952d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteNumericDisplay/91 (LCD_WriteNumericDisplay) @0x7f2fcc595168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteAlphanumericDisplay/90 (LCD_WriteAlphanumericDisplay) @0x7f2fcc595000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteChar/89 (LCD_WriteChar) @0x7f2fcc57a168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: segments14forchar/76 (read)segments7forchar/77 (read)tablcd/78 (read)com_encoding/80 (read)seg_encoding/79 (read)seg_encoding/79 (read)com_encoding/80 (read)segdatalow/83 (read)tablcdclear/82 (read)segdatalow/83 (read)segdatahigh/84 (read)tablcdclear/82 (read)segdatahigh/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: LCD_WriteString/92 LCD_WriteString/92 LCD_WriteNumericDisplay/91 LCD_WriteNumericDisplay/91 LCD_WriteAlphanumericDisplay/90 LCD_WriteAlphanumericDisplay/90 
+  Calls: 
+LCD_Config/88 (LCD_Config) @0x7f2fcc57ae10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lcdclock_set/75 (read)lcdclock_set/75 (write)seg_encoding/79 (read)seg_encoding/79 (read)
+  Referring: 
+  Function flags: body
+  Called by: LCD_Init/87 
+  Calls: LCD_SetContrast/97 LCD_SetVoltage/96 LCD_SetClock/86 SetLFAClock/85 
+LCD_Init/87 (LCD_Init) @0x7f2fcc57aca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: LCD_Config/88 
+LCD_SetClock/86 (LCD_SetClock) @0x7f2fcc57ab40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+SetLFAClock/85 (SetLFAClock) @0x7f2fcc57a9d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: SystemCoreClock/104 (read)lcdclock_set/75 (write)
+  Referring: 
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+segdatahigh/84 (segdatahigh) @0x7f2fcc93b880
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_ClearAll/93 (read)LCD_SetAll/94 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+segdatalow/83 (segdatalow) @0x7f2fcc93b800
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_ClearAll/93 (read)LCD_SetAll/94 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tablcdclear/82 (tablcdclear) @0x7f2fcc93b780
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tablcdspecial/81 (tablcdspecial) @0x7f2fcc93b700
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+com_encoding/80 (com_encoding) @0x7f2fcc93b680
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+seg_encoding/79 (seg_encoding) @0x7f2fcc93b600
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_Config/88 (read)LCD_Config/88 (read)LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSegment/100 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tablcd/78 (tablcd) @0x7f2fcc93b580
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteSpecial/101 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+segments7forchar/77 (segments7forchar) @0x7f2fcc93b500
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+segments14forchar/76 (segments14forchar) @0x7f2fcc93b480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: LCD_WriteChar/89 (read)
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+lcdclock_set/75 (lcdclock_set) @0x7f2fcc93b400
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SetLFAClock/85 (write)LCD_Config/88 (read)LCD_Config/88 (write)
+  Availability: not-ready
+  Varpool flags: initialized
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+SystemCoreClock/104 (SystemCoreClock) @0x7f2fcc5a6980
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public common
+  References: 
+  Referring: SetLFAClock/85 (read)
+  Availability: not_available
+  Varpool flags:
+LCD_Unfreeze/103 (LCD_Unfreeze) @0x7f2fcc5a82d0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_Freeze/102 (LCD_Freeze) @0x7f2fcc5a8168
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_WriteSpecial/101 (LCD_WriteSpecial) @0x7f2fcc5a8000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tablcdspecial/81 (read)seg_encoding/79 (read)tablcd/78 (read)com_encoding/80 (read)seg_encoding/79 (read)seg_encoding/79 (read)segdatalow/83 (read)tablcdclear/82 (read)segdatalow/83 (read)segdatahigh/84 (read)tablcdclear/82 (read)segdatahigh/84 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegment/100 (LCD_WriteSegment) @0x7f2fcc595e10
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: seg_encoding/79 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegment2/99 (LCD_WriteSegment2) @0x7f2fcc595ca8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteSegmentMask/98 
+LCD_WriteSegmentMask/98 (LCD_WriteSegmentMask) @0x7f2fcc595b40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: com_encoding/80 (read)segdatalow/83 (read)segdatalow/83 (read)segdatahigh/84 (read)segdatahigh/84 (read)segdatalow/83 (read)segdatalow/83 (read)segdatahigh/84 (read)segdatahigh/84 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: LCD_WriteSpecial/101 LCD_WriteSegment/100 LCD_WriteSegment2/99 
+  Calls: 
+LCD_SetContrast/97 (LCD_SetContrast) @0x7f2fcc5959d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+LCD_SetVoltage/96 (LCD_SetVoltage) @0x7f2fcc595870
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: ln2/95 
+ln2/95 (ln2) @0x7f2fcc595708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: LCD_SetVoltage/96 
+  Calls: 
+LCD_SetAll/94 (LCD_SetAll) @0x7f2fcc5955a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: segdatalow/83 (read)segdatahigh/84 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_ClearAll/93 (LCD_ClearAll) @0x7f2fcc595438
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: segdatalow/83 (read)segdatahigh/84 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+LCD_WriteString/92 (LCD_WriteString) @0x7f2fcc5952d0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteNumericDisplay/91 (LCD_WriteNumericDisplay) @0x7f2fcc595168
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteAlphanumericDisplay/90 (LCD_WriteAlphanumericDisplay) @0x7f2fcc595000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: LCD_WriteChar/89 LCD_WriteChar/89 
+LCD_WriteChar/89 (LCD_WriteChar) @0x7f2fcc57a168
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: segments14forchar/76 (read)segments7forchar/77 (read)tablcd/78 (read)com_encoding/80 (read)seg_encoding/79 (read)seg_encoding/79 (read)com_encoding/80 (read)segdatalow/83 (read)tablcdclear/82 (read)segdatalow/83 (read)segdatahigh/84 (read)tablcdclear/82 (read)segdatahigh/84 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: LCD_WriteString/92 LCD_WriteString/92 LCD_WriteNumericDisplay/91 LCD_WriteNumericDisplay/91 LCD_WriteAlphanumericDisplay/90 LCD_WriteAlphanumericDisplay/90 
+  Calls: 
+LCD_Config/88 (LCD_Config) @0x7f2fcc57ae10
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lcdclock_set/75 (read)lcdclock_set/75 (write)seg_encoding/79 (read)seg_encoding/79 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: LCD_Init/87 
+  Calls: LCD_SetContrast/97 LCD_SetVoltage/96 LCD_SetClock/86 SetLFAClock/85 
+LCD_Init/87 (LCD_Init) @0x7f2fcc57aca8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: LCD_Config/88 
+LCD_SetClock/86 (LCD_SetClock) @0x7f2fcc57ab40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+SetLFAClock/85 (SetLFAClock) @0x7f2fcc57a9d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SystemCoreClock/104 (read)lcdclock_set/75 (write)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: LCD_Config/88 
+  Calls: 
+segdatahigh/84 (segdatahigh) @0x7f2fcc93b880
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_SetAll/94 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteChar/89 (read)LCD_WriteSegmentMask/98 (read)LCD_ClearAll/93 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+segdatalow/83 (segdatalow) @0x7f2fcc93b800
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_SetAll/94 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteChar/89 (read)LCD_WriteSegmentMask/98 (read)LCD_ClearAll/93 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSegmentMask/98 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tablcdclear/82 (tablcdclear) @0x7f2fcc93b780
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tablcdspecial/81 (tablcdspecial) @0x7f2fcc93b700
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: LCD_WriteSpecial/101 (read)
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+com_encoding/80 (com_encoding) @0x7f2fcc93b680
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: LCD_WriteSegmentMask/98 (read)LCD_WriteChar/89 (read)LCD_WriteChar/89 (read)LCD_WriteSpecial/101 (read)
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+seg_encoding/79 (seg_encoding) @0x7f2fcc93b600
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: LCD_Config/88 (read)LCD_WriteSegment/100 (read)LCD_WriteChar/89 (read)LCD_Config/88 (read)LCD_WriteChar/89 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)LCD_WriteSpecial/101 (read)
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tablcd/78 (tablcd) @0x7f2fcc93b580
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: LCD_WriteChar/89 (read)LCD_WriteSpecial/101 (read)
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+segments7forchar/77 (segments7forchar) @0x7f2fcc93b500
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: LCD_WriteChar/89 (read)
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+segments14forchar/76 (segments14forchar) @0x7f2fcc93b480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: LCD_WriteChar/89 (read)
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+lcdclock_set/75 (lcdclock_set) @0x7f2fcc93b400
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SetLFAClock/85 (write)LCD_Config/88 (read)LCD_Config/88 (write)
+  Availability: available
+  Varpool flags: initialized
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: segdatahigh segdatalow tablcdclear tablcdspecial com_encoding seg_encoding tablcd segments7forchar segments14forchar lcdclock_set
+Removing variables:
+
+Final Symbol table:
+
+SystemCoreClock/104 (SystemCoreClock) @0x7f2fcc5a6980
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public common
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+LCD_Unfreeze/103 (LCD_Unfreeze) @0x7f2fcc5a82d0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_Unfreeze (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_Freeze/102 (LCD_Freeze) @0x7f2fcc5a8168
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_Freeze (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_WriteSpecial/101 (LCD_WriteSpecial) @0x7f2fcc5a8000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_WriteSpecial (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_WriteSegment/100 (LCD_WriteSegment) @0x7f2fcc595e10
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_WriteSegment (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_WriteSegment2/99 (LCD_WriteSegment2) @0x7f2fcc595ca8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_WriteSegment2 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_WriteSegmentMask/98 (LCD_WriteSegmentMask) @0x7f2fcc595b40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_WriteSegmentMask (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_SetContrast/97 (LCD_SetContrast) @0x7f2fcc5959d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_SetContrast (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_SetVoltage/96 (LCD_SetVoltage) @0x7f2fcc595870
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_SetVoltage (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+ln2/95 (ln2) @0x7f2fcc595708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.ln2 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_SetAll/94 (LCD_SetAll) @0x7f2fcc5955a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_SetAll (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_ClearAll/93 (LCD_ClearAll) @0x7f2fcc595438
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_ClearAll (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_WriteString/92 (LCD_WriteString) @0x7f2fcc5952d0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_WriteString (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_WriteNumericDisplay/91 (LCD_WriteNumericDisplay) @0x7f2fcc595168
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_WriteNumericDisplay (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_WriteAlphanumericDisplay/90 (LCD_WriteAlphanumericDisplay) @0x7f2fcc595000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_WriteAlphanumericDisplay (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_WriteChar/89 (LCD_WriteChar) @0x7f2fcc57a168
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_WriteChar (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_Config/88 (LCD_Config) @0x7f2fcc57ae10
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_Config (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_Init/87 (LCD_Init) @0x7f2fcc57aca8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LCD_SetClock/86 (LCD_SetClock) @0x7f2fcc57ab40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.LCD_SetClock (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SetLFAClock/85 (SetLFAClock) @0x7f2fcc57a9d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SetLFAClock (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+segdatahigh/84 (segdatahigh) @0x7f2fcc93b880
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.segdatahigh (implicit_section)
+  Aux: @0x1
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+segdatalow/83 (segdatalow) @0x7f2fcc93b800
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.segdatalow (implicit_section)
+  Aux: @0x7f2fcc93b880
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tablcdclear/82 (tablcdclear) @0x7f2fcc93b780
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.tablcdclear (implicit_section)
+  Aux: @0x7f2fcc93b800
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tablcdspecial/81 (tablcdspecial) @0x7f2fcc93b700
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.tablcdspecial (implicit_section)
+  Aux: @0x7f2fcc93b780
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+com_encoding/80 (com_encoding) @0x7f2fcc93b680
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.com_encoding (implicit_section)
+  Aux: @0x7f2fcc93b700
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+seg_encoding/79 (seg_encoding) @0x7f2fcc93b600
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.seg_encoding (implicit_section)
+  Aux: @0x7f2fcc93b680
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tablcd/78 (tablcd) @0x7f2fcc93b580
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.tablcd (implicit_section)
+  Aux: @0x7f2fcc93b600
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+segments7forchar/77 (segments7forchar) @0x7f2fcc93b500
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.segments7forchar (implicit_section)
+  Aux: @0x7f2fcc93b580
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+segments14forchar/76 (segments14forchar) @0x7f2fcc93b480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.segments14forchar (implicit_section)
+  Aux: @0x7f2fcc93b500
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+lcdclock_set/75 (lcdclock_set) @0x7f2fcc93b400
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.lcdclock_set (implicit_section)
+  Aux: @0x7f2fcc93b480
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized

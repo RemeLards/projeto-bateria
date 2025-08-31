@@ -1,0 +1,2795 @@
+Trivially needed symbols: UART_Flush UART_PutCharPolling UART_DisableInterrupts UART_EnableInterrupts UART_GetChar UART_GetCharNoWait UART_SendString UART_SendChar UART_GetStatus UART1_TX_IRQHandler UART0_TX_IRQHandler UART1_RX_IRQHandler UART0_RX_IRQHandler UART_Init UART_Reset UART1_Reconfigure UART0_Reconfigure UART1_Prepare UART0_Prepare UART_SetBaudrate obuff1 ibuff1 obuffarea1 ibuffarea1 obuff0 ibuff0 obuffarea0 ibuffarea0 GPIOF GPIOE BAUD
+
+
+Initial Symbol table:
+
+buffer_clear/114 (buffer_clear) @0x7fac407e8870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Flush/107 UART_Flush/107 
+  Calls: 
+buffer_remove/113 (buffer_remove) @0x7fac407e8708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Flush/107 UART_Flush/107 UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART1_TX_IRQHandler/98 UART0_TX_IRQHandler/97 
+  Calls: 
+buffer_insert/112 (buffer_insert) @0x7fac407e85a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_SendChar/100 UART_SendChar/100 UART1_RX_IRQHandler/96 UART0_RX_IRQHandler/95 
+  Calls: 
+ClockRegisterCallback/111 (ClockRegisterCallback) @0x7fac407e82d0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Init/94 UART_Init/94 
+  Calls: 
+buffer_init/110 (buffer_init) @0x7fac407e8168
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+buffer_deinit/109 (buffer_deinit) @0x7fac407e8000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Reset/93 UART_Reset/93 UART_Reset/93 UART_Reset/93 
+  Calls: 
+ClockGetPeripheralClockFrequency/108 (ClockGetPeripheralClockFrequency) @0x7fac407d7e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_SetBaudrate/86 
+  Calls: 
+UART_Flush/107 (UART_Flush) @0x7fac407d7ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x1796a00
+  References: ibuff0/80 (read)ibuff1/84 (read)obuff0/81 (read)obuff0/81 (read)obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: UART_PutCharPolling/106 buffer_remove/113 UART_PutCharPolling/106 buffer_remove/113 buffer_clear/114 buffer_clear/114 
+UART_PutCharPolling/106 (UART_PutCharPolling) @0x7fac407d7b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407d7ca8
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Flush/107 UART_Flush/107 
+  Calls: 
+UART_DisableInterrupts/105 (UART_DisableInterrupts) @0x7fac407d79d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407d7b40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+UART_EnableInterrupts/104 (UART_EnableInterrupts) @0x7fac407d7870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407d79d8
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+UART_GetChar/103 (UART_GetChar) @0x7fac407d7708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407d7870
+  References: ibuff0/80 (read)ibuff0/80 (read)ibuff1/84 (read)ibuff1/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: __enable_irq/24 buffer_remove/113 __disable_irq/25 __enable_irq/24 buffer_remove/113 __disable_irq/25 
+UART_GetCharNoWait/102 (UART_GetCharNoWait) @0x7fac407d75a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407d7708
+  References: ibuff0/80 (read)ibuff0/80 (read)ibuff1/84 (read)ibuff1/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: __enable_irq/24 buffer_remove/113 __disable_irq/25 __enable_irq/24 buffer_remove/113 __disable_irq/25 
+UART_SendString/101 (UART_SendString) @0x7fac407d7438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407d75a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: UART_SendChar/100 
+UART_SendChar/100 (UART_SendChar) @0x7fac407d72d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407d7438
+  References: obuff0/81 (read)obuff0/81 (read)obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: UART_SendString/101 
+  Calls: __enable_irq/24 buffer_insert/112 __disable_irq/25 __enable_irq/24 buffer_insert/112 __disable_irq/25 
+UART_GetStatus/99 (UART_GetStatus) @0x7fac407d7168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407d72d0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+UART1_TX_IRQHandler/98 (UART1_TX_IRQHandler) @0x7fac407d7000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407d7168
+  References: obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_remove/113 
+UART0_TX_IRQHandler/97 (UART0_TX_IRQHandler) @0x7fac407c9e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407d7000
+  References: obuff0/81 (read)obuff0/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_remove/113 
+UART1_RX_IRQHandler/96 (UART1_RX_IRQHandler) @0x7fac407c9ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407c9e10
+  References: ibuff1/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_insert/112 
+UART0_RX_IRQHandler/95 (UART0_RX_IRQHandler) @0x7fac407c9b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407c9ca8
+  References: ibuff0/80 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_insert/112 
+UART_Init/94 (UART_Init) @0x7fac407c99d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407c9b40
+  References: ibuffarea0/78 (addr)ibuff0/80 (write)obuffarea0/79 (addr)obuff0/81 (write)ibuffarea1/82 (addr)ibuff1/84 (write)UART0_Prepare/89 (addr)UART0_Reconfigure/91 (addr)UART1_Prepare/90 (addr)UART1_Reconfigure/92 (addr)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: ClockRegisterCallback/111 UART_TurnOn/88 UART_TurnOff/87 __NVIC_EnableIRQ/48 __NVIC_EnableIRQ/48 __NVIC_ClearPendingIRQ/53 __NVIC_ClearPendingIRQ/53 __NVIC_SetPriority/55 __NVIC_SetPriority/55 ClockRegisterCallback/111 UART_TurnOn/88 UART_TurnOff/87 __NVIC_EnableIRQ/48 __NVIC_EnableIRQ/48 __NVIC_ClearPendingIRQ/53 __NVIC_ClearPendingIRQ/53 __NVIC_SetPriority/55 __NVIC_SetPriority/55 buffer_init/110 buffer_init/110 buffer_init/110 UART_SetBaudrate/86 UART_Reset/93 
+UART_Reset/93 (UART_Reset) @0x7fac407c9870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7fac407c99d8
+  References: ibuff0/80 (read)obuff0/81 (read)ibuff1/84 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 
+  Calls: buffer_deinit/109 buffer_deinit/109 buffer_deinit/109 buffer_deinit/109 
+UART1_Reconfigure/92 (UART1_Reconfigure) @0x7fac407c9708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @0x7fac407c9870
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOn/88 UART_SetBaudrate/86 
+UART0_Reconfigure/91 (UART0_Reconfigure) @0x7fac407c95a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @0x7fac407c9708
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOn/88 UART_SetBaudrate/86 
+UART1_Prepare/90 (UART1_Prepare) @0x7fac407c9438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @0x7fac407c95a0
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOff/87 
+UART0_Prepare/89 (UART0_Prepare) @0x7fac407c92d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @0x7fac407c9438
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOff/87 
+UART_TurnOn/88 (UART_TurnOn) @0x7fac407c9168
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x7fac407c9708
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART1_Reconfigure/92 UART0_Reconfigure/91 
+  Calls: 
+UART_TurnOff/87 (UART_TurnOff) @0x7fac407c9000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x7fac407c9438
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART1_Prepare/90 UART0_Prepare/89 
+  Calls: 
+UART_SetBaudrate/86 (UART_SetBaudrate) @0x7fac407c4e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407c92d0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART1_Reconfigure/92 UART0_Reconfigure/91 
+  Calls: ClockGetPeripheralClockFrequency/108 
+obuff1/85 (obuff1) @0x7fac407b9f00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407c4e10
+  References: 
+  Referring: UART_Reset/93 (read)UART1_TX_IRQHandler/98 (read)UART1_TX_IRQHandler/98 (read)UART_SendChar/100 (read)UART_SendChar/100 (read)UART_Flush/107 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+ibuff1/84 (ibuff1) @0x7fac407b9e80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407b9f00
+  References: 
+  Referring: UART_Reset/93 (read)UART_Init/94 (write)UART1_RX_IRQHandler/96 (read)UART_GetCharNoWait/102 (read)UART_GetCharNoWait/102 (read)UART_GetChar/103 (read)UART_GetChar/103 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+obuffarea1/83 (obuffarea1) @0x7fac407b9e00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  Aux: @0x7fac407b9e80
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags:
+ibuffarea1/82 (ibuffarea1) @0x7fac407b9d80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  Aux: @0x7fac407b9e00
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: not-ready
+  Varpool flags:
+obuff0/81 (obuff0) @0x7fac407b9d00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407b9d80
+  References: 
+  Referring: UART_Reset/93 (read)UART_Init/94 (write)UART0_TX_IRQHandler/97 (read)UART0_TX_IRQHandler/97 (read)UART_SendChar/100 (read)UART_SendChar/100 (read)UART_Flush/107 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+ibuff0/80 (ibuff0) @0x7fac407b9c80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407b9d00
+  References: 
+  Referring: UART_Reset/93 (read)UART_Init/94 (write)UART0_RX_IRQHandler/95 (read)UART_GetCharNoWait/102 (read)UART_GetCharNoWait/102 (read)UART_GetChar/103 (read)UART_GetChar/103 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+obuffarea0/79 (obuffarea0) @0x7fac407b9c00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  Aux: @0x7fac407b9c80
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: not-ready
+  Varpool flags:
+ibuffarea0/78 (ibuffarea0) @0x7fac407b9b80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  Aux: @0x7fac407b9c00
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: not-ready
+  Varpool flags:
+GPIOF/77 (GPIOF) @0x7fac407b9b00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7fac407b9b80
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+GPIOE/76 (GPIOE) @0x7fac407b9a80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7fac407b9b00
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+BAUD/75 (BAUD) @0x7fac407b9a00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7fac407b9a80
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+SystemCoreClockUpdate/74 (SystemCoreClockUpdate) @0x7fac40b80b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_CheckChar/73 (ITM_CheckChar) @0x7fac40b80438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_ReceiveChar/72 (ITM_ReceiveChar) @0x7fac40b802d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_SendChar/71 (ITM_SendChar) @0x7fac40b80168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SysTick_Config/70 (SysTick_Config) @0x7fac40b72e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SCB_GetFPUType/69 (SCB_GetFPUType) @0x7fac40b72ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Load/68 (ARM_MPU_Load) @0x7fac40b72b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_OrderedMemcpy/67 (ARM_MPU_OrderedMemcpy) @0x7fac40b729d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_SetRegionEx/66 (ARM_MPU_SetRegionEx) @0x7fac40b72870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_SetRegion/65 (ARM_MPU_SetRegion) @0x7fac40b72708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_ClrRegion/64 (ARM_MPU_ClrRegion) @0x7fac40b725a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Disable/63 (ARM_MPU_Disable) @0x7fac40b72438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Enable/62 (ARM_MPU_Enable) @0x7fac40b722d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SystemReset/61 (__NVIC_SystemReset) @0x7fac40b64b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetVector/60 (__NVIC_GetVector) @0x7fac40b649d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetVector/59 (__NVIC_SetVector) @0x7fac40b64870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+NVIC_DecodePriority/58 (NVIC_DecodePriority) @0x7fac40b64708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+NVIC_EncodePriority/57 (NVIC_EncodePriority) @0x7fac40b645a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPriority/56 (__NVIC_GetPriority) @0x7fac40b64438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPriority/55 (__NVIC_SetPriority) @0x7fac40b642d0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x7fac40b64000
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__NVIC_GetActive/54 (__NVIC_GetActive) @0x7fac40b64168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_ClearPendingIRQ/53 (__NVIC_ClearPendingIRQ) @0x7fac40b64000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x7fac40b54870
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__NVIC_SetPendingIRQ/52 (__NVIC_SetPendingIRQ) @0x7fac40b54e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPendingIRQ/51 (__NVIC_GetPendingIRQ) @0x7fac40b54ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_DisableIRQ/50 (__NVIC_DisableIRQ) @0x7fac40b54b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetEnableIRQ/49 (__NVIC_GetEnableIRQ) @0x7fac40b549d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_EnableIRQ/48 (__NVIC_EnableIRQ) @0x7fac40b54870
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x7fac407c9b40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__NVIC_GetPriorityGrouping/47 (__NVIC_GetPriorityGrouping) @0x7fac40b54708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPriorityGrouping/46 (__NVIC_SetPriorityGrouping) @0x7fac40b545a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_FPSCR/45 (__set_FPSCR) @0x7fac40b06870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_FPSCR/44 (__get_FPSCR) @0x7fac40b06708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_FAULTMASK/43 (__set_FAULTMASK) @0x7fac40b065a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_FAULTMASK/42 (__get_FAULTMASK) @0x7fac40b06438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_BASEPRI_MAX/41 (__set_BASEPRI_MAX) @0x7fac40b062d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_BASEPRI/40 (__set_BASEPRI) @0x7fac40b06168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_BASEPRI/39 (__get_BASEPRI) @0x7fac40b06000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__disable_fault_irq/38 (__disable_fault_irq) @0x7fac40b01e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__enable_fault_irq/37 (__enable_fault_irq) @0x7fac40b01ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_PRIMASK/36 (__set_PRIMASK) @0x7fac40b01b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_PRIMASK/35 (__get_PRIMASK) @0x7fac40b019d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_MSP/34 (__set_MSP) @0x7fac40b01870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_MSP/33 (__get_MSP) @0x7fac40b01708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_PSP/32 (__set_PSP) @0x7fac40b015a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_PSP/31 (__get_PSP) @0x7fac40b01438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_xPSR/30 (__get_xPSR) @0x7fac40b012d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_APSR/29 (__get_APSR) @0x7fac40b01168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_IPSR/28 (__get_IPSR) @0x7fac40b01000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_CONTROL/27 (__set_CONTROL) @0x7fac40af7e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_CONTROL/26 (__get_CONTROL) @0x7fac40af7ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__disable_irq/25 (__disable_irq) @0x7fac40af7b40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x7fac40af79d8
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART_SendChar/100 UART_SendChar/100 
+  Calls: 
+__enable_irq/24 (__enable_irq) @0x7fac40af79d8
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x7fac407d7438
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART_SendChar/100 UART_SendChar/100 
+  Calls: 
+__STRT/23 (__STRT) @0x7fac40af7870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRHT/22 (__STRHT) @0x7fac40af7708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRBT/21 (__STRBT) @0x7fac40af75a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRT/20 (__LDRT) @0x7fac40af7438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRHT/19 (__LDRHT) @0x7fac40af72d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRBT/18 (__LDRBT) @0x7fac40af7168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__RRX/17 (__RRX) @0x7fac40af7000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__CLREX/16 (__CLREX) @0x7fac40aede10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXW/15 (__STREXW) @0x7fac40aedca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXH/14 (__STREXH) @0x7fac40aedb40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXB/13 (__STREXB) @0x7fac40aed9d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXW/12 (__LDREXW) @0x7fac40aed870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXH/11 (__LDREXH) @0x7fac40aed708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXB/10 (__LDREXB) @0x7fac40aed5a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__CLZ/9 (__CLZ) @0x7fac40aed438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__RBIT/8 (__RBIT) @0x7fac40aed2d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__ROR/7 (__ROR) @0x7fac40aed168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REVSH/6 (__REVSH) @0x7fac40aed000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REV16/5 (__REV16) @0x7fac40ae0e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REV/4 (__REV) @0x7fac40ae0ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__DMB/3 (__DMB) @0x7fac40ae0b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__DSB/2 (__DSB) @0x7fac40ae09d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__ISB/1 (__ISB) @0x7fac40ae0870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__cmsis_start/0 (__cmsis_start) @0x7fac40ae05a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: SystemCoreClockUpdate ITM_CheckChar ITM_ReceiveChar ITM_SendChar SysTick_Config SCB_GetFPUType ARM_MPU_Load ARM_MPU_OrderedMemcpy ARM_MPU_SetRegionEx ARM_MPU_SetRegion ARM_MPU_ClrRegion ARM_MPU_Disable ARM_MPU_Enable __NVIC_SystemReset __NVIC_GetVector __NVIC_SetVector NVIC_DecodePriority NVIC_EncodePriority __NVIC_GetPriority __NVIC_GetActive __NVIC_SetPendingIRQ __NVIC_GetPendingIRQ __NVIC_DisableIRQ __NVIC_GetEnableIRQ __NVIC_GetPriorityGrouping __NVIC_SetPriorityGrouping __set_FPSCR __get_FPSCR __set_FAULTMASK __get_FAULTMASK __set_BASEPRI_MAX __set_BASEPRI __get_BASEPRI __disable_fault_irq __enable_fault_irq __set_PRIMASK __get_PRIMASK __set_MSP __get_MSP __set_PSP __get_PSP __get_xPSR __get_APSR __get_IPSR __set_CONTROL __get_CONTROL __STRT __STRHT __STRBT __LDRT __LDRHT __LDRBT __RRX __CLREX __STREXW __STREXH __STREXB __LDREXW __LDREXH __LDREXB __CLZ __RBIT __ROR __REVSH __REV16 __REV __DMB __DSB __ISB __cmsis_start
+
+Reclaimed Symbol table:
+
+buffer_clear/114 (buffer_clear) @0x7fac407e8870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Flush/107 UART_Flush/107 
+  Calls: 
+buffer_remove/113 (buffer_remove) @0x7fac407e8708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Flush/107 UART_Flush/107 UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART1_TX_IRQHandler/98 UART0_TX_IRQHandler/97 
+  Calls: 
+buffer_insert/112 (buffer_insert) @0x7fac407e85a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_SendChar/100 UART_SendChar/100 UART1_RX_IRQHandler/96 UART0_RX_IRQHandler/95 
+  Calls: 
+ClockRegisterCallback/111 (ClockRegisterCallback) @0x7fac407e82d0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Init/94 UART_Init/94 
+  Calls: 
+buffer_init/110 (buffer_init) @0x7fac407e8168
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+buffer_deinit/109 (buffer_deinit) @0x7fac407e8000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Reset/93 UART_Reset/93 UART_Reset/93 UART_Reset/93 
+  Calls: 
+ClockGetPeripheralClockFrequency/108 (ClockGetPeripheralClockFrequency) @0x7fac407d7e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_SetBaudrate/86 
+  Calls: 
+UART_Flush/107 (UART_Flush) @0x7fac407d7ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff0/80 (read)ibuff1/84 (read)obuff0/81 (read)obuff0/81 (read)obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: UART_PutCharPolling/106 buffer_remove/113 UART_PutCharPolling/106 buffer_remove/113 buffer_clear/114 buffer_clear/114 
+UART_PutCharPolling/106 (UART_PutCharPolling) @0x7fac407d7b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Flush/107 UART_Flush/107 
+  Calls: 
+UART_DisableInterrupts/105 (UART_DisableInterrupts) @0x7fac407d79d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+UART_EnableInterrupts/104 (UART_EnableInterrupts) @0x7fac407d7870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+UART_GetChar/103 (UART_GetChar) @0x7fac407d7708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff0/80 (read)ibuff0/80 (read)ibuff1/84 (read)ibuff1/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: __enable_irq/24 buffer_remove/113 __disable_irq/25 __enable_irq/24 buffer_remove/113 __disable_irq/25 
+UART_GetCharNoWait/102 (UART_GetCharNoWait) @0x7fac407d75a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff0/80 (read)ibuff0/80 (read)ibuff1/84 (read)ibuff1/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: __enable_irq/24 buffer_remove/113 __disable_irq/25 __enable_irq/24 buffer_remove/113 __disable_irq/25 
+UART_SendString/101 (UART_SendString) @0x7fac407d7438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: UART_SendChar/100 
+UART_SendChar/100 (UART_SendChar) @0x7fac407d72d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: obuff0/81 (read)obuff0/81 (read)obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: UART_SendString/101 
+  Calls: __enable_irq/24 buffer_insert/112 __disable_irq/25 __enable_irq/24 buffer_insert/112 __disable_irq/25 
+UART_GetStatus/99 (UART_GetStatus) @0x7fac407d7168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+UART1_TX_IRQHandler/98 (UART1_TX_IRQHandler) @0x7fac407d7000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_remove/113 
+UART0_TX_IRQHandler/97 (UART0_TX_IRQHandler) @0x7fac407c9e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: obuff0/81 (read)obuff0/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_remove/113 
+UART1_RX_IRQHandler/96 (UART1_RX_IRQHandler) @0x7fac407c9ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff1/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_insert/112 
+UART0_RX_IRQHandler/95 (UART0_RX_IRQHandler) @0x7fac407c9b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff0/80 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_insert/112 
+UART_Init/94 (UART_Init) @0x7fac407c99d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuffarea0/78 (addr)ibuff0/80 (write)obuffarea0/79 (addr)obuff0/81 (write)ibuffarea1/82 (addr)ibuff1/84 (write)UART0_Prepare/89 (addr)UART0_Reconfigure/91 (addr)UART1_Prepare/90 (addr)UART1_Reconfigure/92 (addr)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: ClockRegisterCallback/111 UART_TurnOn/88 UART_TurnOff/87 __NVIC_EnableIRQ/48 __NVIC_EnableIRQ/48 __NVIC_ClearPendingIRQ/53 __NVIC_ClearPendingIRQ/53 __NVIC_SetPriority/55 __NVIC_SetPriority/55 ClockRegisterCallback/111 UART_TurnOn/88 UART_TurnOff/87 __NVIC_EnableIRQ/48 __NVIC_EnableIRQ/48 __NVIC_ClearPendingIRQ/53 __NVIC_ClearPendingIRQ/53 __NVIC_SetPriority/55 __NVIC_SetPriority/55 buffer_init/110 buffer_init/110 buffer_init/110 UART_SetBaudrate/86 UART_Reset/93 
+UART_Reset/93 (UART_Reset) @0x7fac407c9870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ibuff0/80 (read)obuff0/81 (read)ibuff1/84 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 
+  Calls: buffer_deinit/109 buffer_deinit/109 buffer_deinit/109 buffer_deinit/109 
+UART1_Reconfigure/92 (UART1_Reconfigure) @0x7fac407c9708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOn/88 UART_SetBaudrate/86 
+UART0_Reconfigure/91 (UART0_Reconfigure) @0x7fac407c95a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOn/88 UART_SetBaudrate/86 
+UART1_Prepare/90 (UART1_Prepare) @0x7fac407c9438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOff/87 
+UART0_Prepare/89 (UART0_Prepare) @0x7fac407c92d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOff/87 
+UART_TurnOn/88 (UART_TurnOn) @0x7fac407c9168
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART1_Reconfigure/92 UART0_Reconfigure/91 
+  Calls: 
+UART_TurnOff/87 (UART_TurnOff) @0x7fac407c9000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART1_Prepare/90 UART0_Prepare/89 
+  Calls: 
+UART_SetBaudrate/86 (UART_SetBaudrate) @0x7fac407c4e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART1_Reconfigure/92 UART0_Reconfigure/91 
+  Calls: ClockGetPeripheralClockFrequency/108 
+obuff1/85 (obuff1) @0x7fac407b9f00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: UART_Reset/93 (read)UART1_TX_IRQHandler/98 (read)UART1_TX_IRQHandler/98 (read)UART_SendChar/100 (read)UART_SendChar/100 (read)UART_Flush/107 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+ibuff1/84 (ibuff1) @0x7fac407b9e80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: UART_Reset/93 (read)UART_Init/94 (write)UART1_RX_IRQHandler/96 (read)UART_GetCharNoWait/102 (read)UART_GetCharNoWait/102 (read)UART_GetChar/103 (read)UART_GetChar/103 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+obuffarea1/83 (obuffarea1) @0x7fac407b9e00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags:
+ibuffarea1/82 (ibuffarea1) @0x7fac407b9d80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: not-ready
+  Varpool flags:
+obuff0/81 (obuff0) @0x7fac407b9d00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: UART_Reset/93 (read)UART_Init/94 (write)UART0_TX_IRQHandler/97 (read)UART0_TX_IRQHandler/97 (read)UART_SendChar/100 (read)UART_SendChar/100 (read)UART_Flush/107 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+ibuff0/80 (ibuff0) @0x7fac407b9c80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: UART_Reset/93 (read)UART_Init/94 (write)UART0_RX_IRQHandler/95 (read)UART_GetCharNoWait/102 (read)UART_GetCharNoWait/102 (read)UART_GetChar/103 (read)UART_GetChar/103 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+obuffarea0/79 (obuffarea0) @0x7fac407b9c00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: not-ready
+  Varpool flags:
+ibuffarea0/78 (ibuffarea0) @0x7fac407b9b80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: not-ready
+  Varpool flags:
+GPIOF/77 (GPIOF) @0x7fac407b9b00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+GPIOE/76 (GPIOE) @0x7fac407b9a80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+BAUD/75 (BAUD) @0x7fac407b9a00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+__NVIC_SetPriority/55 (__NVIC_SetPriority) @0x7fac40b642d0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__NVIC_ClearPendingIRQ/53 (__NVIC_ClearPendingIRQ) @0x7fac40b64000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__NVIC_EnableIRQ/48 (__NVIC_EnableIRQ) @0x7fac40b54870
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__disable_irq/25 (__disable_irq) @0x7fac40af7b40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART_SendChar/100 UART_SendChar/100 
+  Calls: 
+__enable_irq/24 (__enable_irq) @0x7fac40af79d8
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART_SendChar/100 UART_SendChar/100 
+  Calls: 
+
+
+Initial Symbol table:
+
+buffer_clear/114 (buffer_clear) @0x7fac407e8870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Flush/107 UART_Flush/107 
+  Calls: 
+buffer_remove/113 (buffer_remove) @0x7fac407e8708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Flush/107 UART_Flush/107 UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART1_TX_IRQHandler/98 UART0_TX_IRQHandler/97 
+  Calls: 
+buffer_insert/112 (buffer_insert) @0x7fac407e85a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_SendChar/100 UART_SendChar/100 UART1_RX_IRQHandler/96 UART0_RX_IRQHandler/95 
+  Calls: 
+ClockRegisterCallback/111 (ClockRegisterCallback) @0x7fac407e82d0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Init/94 UART_Init/94 
+  Calls: 
+buffer_init/110 (buffer_init) @0x7fac407e8168
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+buffer_deinit/109 (buffer_deinit) @0x7fac407e8000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Reset/93 UART_Reset/93 UART_Reset/93 UART_Reset/93 
+  Calls: 
+ClockGetPeripheralClockFrequency/108 (ClockGetPeripheralClockFrequency) @0x7fac407d7e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_SetBaudrate/86 
+  Calls: 
+UART_Flush/107 (UART_Flush) @0x7fac407d7ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff0/80 (read)ibuff1/84 (read)obuff0/81 (read)obuff0/81 (read)obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: UART_PutCharPolling/106 buffer_remove/113 UART_PutCharPolling/106 buffer_remove/113 buffer_clear/114 buffer_clear/114 
+UART_PutCharPolling/106 (UART_PutCharPolling) @0x7fac407d7b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Flush/107 UART_Flush/107 
+  Calls: 
+UART_DisableInterrupts/105 (UART_DisableInterrupts) @0x7fac407d79d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+UART_EnableInterrupts/104 (UART_EnableInterrupts) @0x7fac407d7870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+UART_GetChar/103 (UART_GetChar) @0x7fac407d7708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff0/80 (read)ibuff0/80 (read)ibuff1/84 (read)ibuff1/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: __enable_irq/24 buffer_remove/113 __disable_irq/25 __enable_irq/24 buffer_remove/113 __disable_irq/25 
+UART_GetCharNoWait/102 (UART_GetCharNoWait) @0x7fac407d75a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff0/80 (read)ibuff0/80 (read)ibuff1/84 (read)ibuff1/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: __enable_irq/24 buffer_remove/113 __disable_irq/25 __enable_irq/24 buffer_remove/113 __disable_irq/25 
+UART_SendString/101 (UART_SendString) @0x7fac407d7438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: UART_SendChar/100 
+UART_SendChar/100 (UART_SendChar) @0x7fac407d72d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: obuff0/81 (read)obuff0/81 (read)obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: UART_SendString/101 
+  Calls: __enable_irq/24 buffer_insert/112 __disable_irq/25 __enable_irq/24 buffer_insert/112 __disable_irq/25 
+UART_GetStatus/99 (UART_GetStatus) @0x7fac407d7168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+UART1_TX_IRQHandler/98 (UART1_TX_IRQHandler) @0x7fac407d7000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_remove/113 
+UART0_TX_IRQHandler/97 (UART0_TX_IRQHandler) @0x7fac407c9e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: obuff0/81 (read)obuff0/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_remove/113 
+UART1_RX_IRQHandler/96 (UART1_RX_IRQHandler) @0x7fac407c9ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff1/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_insert/112 
+UART0_RX_IRQHandler/95 (UART0_RX_IRQHandler) @0x7fac407c9b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff0/80 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_insert/112 
+UART_Init/94 (UART_Init) @0x7fac407c99d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuffarea0/78 (addr)ibuff0/80 (write)obuffarea0/79 (addr)obuff0/81 (write)ibuffarea1/82 (addr)ibuff1/84 (write)UART0_Prepare/89 (addr)UART0_Reconfigure/91 (addr)UART1_Prepare/90 (addr)UART1_Reconfigure/92 (addr)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: ClockRegisterCallback/111 UART_TurnOn/88 UART_TurnOff/87 __NVIC_EnableIRQ/48 __NVIC_EnableIRQ/48 __NVIC_ClearPendingIRQ/53 __NVIC_ClearPendingIRQ/53 __NVIC_SetPriority/55 __NVIC_SetPriority/55 ClockRegisterCallback/111 UART_TurnOn/88 UART_TurnOff/87 __NVIC_EnableIRQ/48 __NVIC_EnableIRQ/48 __NVIC_ClearPendingIRQ/53 __NVIC_ClearPendingIRQ/53 __NVIC_SetPriority/55 __NVIC_SetPriority/55 buffer_init/110 buffer_init/110 buffer_init/110 UART_SetBaudrate/86 UART_Reset/93 
+UART_Reset/93 (UART_Reset) @0x7fac407c9870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ibuff0/80 (read)obuff0/81 (read)ibuff1/84 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 
+  Calls: buffer_deinit/109 buffer_deinit/109 buffer_deinit/109 buffer_deinit/109 
+UART1_Reconfigure/92 (UART1_Reconfigure) @0x7fac407c9708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOn/88 UART_SetBaudrate/86 
+UART0_Reconfigure/91 (UART0_Reconfigure) @0x7fac407c95a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOn/88 UART_SetBaudrate/86 
+UART1_Prepare/90 (UART1_Prepare) @0x7fac407c9438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOff/87 
+UART0_Prepare/89 (UART0_Prepare) @0x7fac407c92d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOff/87 
+UART_TurnOn/88 (UART_TurnOn) @0x7fac407c9168
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART1_Reconfigure/92 UART0_Reconfigure/91 
+  Calls: 
+UART_TurnOff/87 (UART_TurnOff) @0x7fac407c9000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART1_Prepare/90 UART0_Prepare/89 
+  Calls: 
+UART_SetBaudrate/86 (UART_SetBaudrate) @0x7fac407c4e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART1_Reconfigure/92 UART0_Reconfigure/91 
+  Calls: ClockGetPeripheralClockFrequency/108 
+obuff1/85 (obuff1) @0x7fac407b9f00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: UART_Reset/93 (read)UART1_TX_IRQHandler/98 (read)UART1_TX_IRQHandler/98 (read)UART_SendChar/100 (read)UART_SendChar/100 (read)UART_Flush/107 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+ibuff1/84 (ibuff1) @0x7fac407b9e80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: UART_Reset/93 (read)UART_Init/94 (write)UART1_RX_IRQHandler/96 (read)UART_GetCharNoWait/102 (read)UART_GetCharNoWait/102 (read)UART_GetChar/103 (read)UART_GetChar/103 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+obuffarea1/83 (obuffarea1) @0x7fac407b9e00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags:
+ibuffarea1/82 (ibuffarea1) @0x7fac407b9d80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: not-ready
+  Varpool flags:
+obuff0/81 (obuff0) @0x7fac407b9d00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: UART_Reset/93 (read)UART_Init/94 (write)UART0_TX_IRQHandler/97 (read)UART0_TX_IRQHandler/97 (read)UART_SendChar/100 (read)UART_SendChar/100 (read)UART_Flush/107 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+ibuff0/80 (ibuff0) @0x7fac407b9c80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: UART_Reset/93 (read)UART_Init/94 (write)UART0_RX_IRQHandler/95 (read)UART_GetCharNoWait/102 (read)UART_GetCharNoWait/102 (read)UART_GetChar/103 (read)UART_GetChar/103 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+obuffarea0/79 (obuffarea0) @0x7fac407b9c00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: not-ready
+  Varpool flags:
+ibuffarea0/78 (ibuffarea0) @0x7fac407b9b80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: not-ready
+  Varpool flags:
+GPIOF/77 (GPIOF) @0x7fac407b9b00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+GPIOE/76 (GPIOE) @0x7fac407b9a80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+BAUD/75 (BAUD) @0x7fac407b9a00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+__NVIC_SetPriority/55 (__NVIC_SetPriority) @0x7fac40b642d0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__NVIC_ClearPendingIRQ/53 (__NVIC_ClearPendingIRQ) @0x7fac40b64000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__NVIC_EnableIRQ/48 (__NVIC_EnableIRQ) @0x7fac40b54870
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__disable_irq/25 (__disable_irq) @0x7fac40af7b40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART_SendChar/100 UART_SendChar/100 
+  Calls: 
+__enable_irq/24 (__enable_irq) @0x7fac40af79d8
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART_SendChar/100 UART_SendChar/100 
+  Calls: 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+buffer_clear/114 (buffer_clear) @0x7fac407e8870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Flush/107 UART_Flush/107 
+  Calls: 
+buffer_remove/113 (buffer_remove) @0x7fac407e8708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Flush/107 UART_Flush/107 UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART1_TX_IRQHandler/98 UART0_TX_IRQHandler/97 
+  Calls: 
+buffer_insert/112 (buffer_insert) @0x7fac407e85a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_SendChar/100 UART_SendChar/100 UART1_RX_IRQHandler/96 UART0_RX_IRQHandler/95 
+  Calls: 
+ClockRegisterCallback/111 (ClockRegisterCallback) @0x7fac407e82d0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Init/94 UART_Init/94 
+  Calls: 
+buffer_init/110 (buffer_init) @0x7fac407e8168
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+buffer_deinit/109 (buffer_deinit) @0x7fac407e8000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_Reset/93 UART_Reset/93 UART_Reset/93 UART_Reset/93 
+  Calls: 
+ClockGetPeripheralClockFrequency/108 (ClockGetPeripheralClockFrequency) @0x7fac407d7e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: UART_SetBaudrate/86 
+  Calls: 
+UART_Flush/107 (UART_Flush) @0x7fac407d7ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff0/80 (read)ibuff1/84 (read)obuff0/81 (read)obuff0/81 (read)obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: UART_PutCharPolling/106 buffer_remove/113 UART_PutCharPolling/106 buffer_remove/113 buffer_clear/114 buffer_clear/114 
+UART_PutCharPolling/106 (UART_PutCharPolling) @0x7fac407d7b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Flush/107 UART_Flush/107 
+  Calls: 
+UART_DisableInterrupts/105 (UART_DisableInterrupts) @0x7fac407d79d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+UART_EnableInterrupts/104 (UART_EnableInterrupts) @0x7fac407d7870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+UART_GetChar/103 (UART_GetChar) @0x7fac407d7708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff0/80 (read)ibuff0/80 (read)ibuff1/84 (read)ibuff1/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: __enable_irq/24 buffer_remove/113 __disable_irq/25 __enable_irq/24 buffer_remove/113 __disable_irq/25 
+UART_GetCharNoWait/102 (UART_GetCharNoWait) @0x7fac407d75a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff0/80 (read)ibuff0/80 (read)ibuff1/84 (read)ibuff1/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: __enable_irq/24 buffer_remove/113 __disable_irq/25 __enable_irq/24 buffer_remove/113 __disable_irq/25 
+UART_SendString/101 (UART_SendString) @0x7fac407d7438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: UART_SendChar/100 
+UART_SendChar/100 (UART_SendChar) @0x7fac407d72d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: obuff0/81 (read)obuff0/81 (read)obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: UART_SendString/101 
+  Calls: __enable_irq/24 buffer_insert/112 __disable_irq/25 __enable_irq/24 buffer_insert/112 __disable_irq/25 
+UART_GetStatus/99 (UART_GetStatus) @0x7fac407d7168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+UART1_TX_IRQHandler/98 (UART1_TX_IRQHandler) @0x7fac407d7000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_remove/113 
+UART0_TX_IRQHandler/97 (UART0_TX_IRQHandler) @0x7fac407c9e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: obuff0/81 (read)obuff0/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_remove/113 
+UART1_RX_IRQHandler/96 (UART1_RX_IRQHandler) @0x7fac407c9ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff1/84 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_insert/112 
+UART0_RX_IRQHandler/95 (UART0_RX_IRQHandler) @0x7fac407c9b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuff0/80 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: buffer_insert/112 
+UART_Init/94 (UART_Init) @0x7fac407c99d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ibuffarea0/78 (addr)ibuff0/80 (write)obuffarea0/79 (addr)obuff0/81 (write)ibuffarea1/82 (addr)ibuff1/84 (write)UART0_Prepare/89 (addr)UART0_Reconfigure/91 (addr)UART1_Prepare/90 (addr)UART1_Reconfigure/92 (addr)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: ClockRegisterCallback/111 UART_TurnOn/88 UART_TurnOff/87 __NVIC_EnableIRQ/48 __NVIC_EnableIRQ/48 __NVIC_ClearPendingIRQ/53 __NVIC_ClearPendingIRQ/53 __NVIC_SetPriority/55 __NVIC_SetPriority/55 ClockRegisterCallback/111 UART_TurnOn/88 UART_TurnOff/87 __NVIC_EnableIRQ/48 __NVIC_EnableIRQ/48 __NVIC_ClearPendingIRQ/53 __NVIC_ClearPendingIRQ/53 __NVIC_SetPriority/55 __NVIC_SetPriority/55 buffer_init/110 buffer_init/110 buffer_init/110 UART_SetBaudrate/86 UART_Reset/93 
+UART_Reset/93 (UART_Reset) @0x7fac407c9870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ibuff0/80 (read)obuff0/81 (read)ibuff1/84 (read)obuff1/85 (read)
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 
+  Calls: buffer_deinit/109 buffer_deinit/109 buffer_deinit/109 buffer_deinit/109 
+UART1_Reconfigure/92 (UART1_Reconfigure) @0x7fac407c9708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOn/88 UART_SetBaudrate/86 
+UART0_Reconfigure/91 (UART0_Reconfigure) @0x7fac407c95a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOn/88 UART_SetBaudrate/86 
+UART1_Prepare/90 (UART1_Prepare) @0x7fac407c9438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOff/87 
+UART0_Prepare/89 (UART0_Prepare) @0x7fac407c92d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOff/87 
+UART_TurnOn/88 (UART_TurnOn) @0x7fac407c9168
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART1_Reconfigure/92 UART0_Reconfigure/91 
+  Calls: 
+UART_TurnOff/87 (UART_TurnOff) @0x7fac407c9000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART1_Prepare/90 UART0_Prepare/89 
+  Calls: 
+UART_SetBaudrate/86 (UART_SetBaudrate) @0x7fac407c4e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART1_Reconfigure/92 UART0_Reconfigure/91 
+  Calls: ClockGetPeripheralClockFrequency/108 
+obuff1/85 (obuff1) @0x7fac407b9f00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: UART_Reset/93 (read)UART1_TX_IRQHandler/98 (read)UART1_TX_IRQHandler/98 (read)UART_SendChar/100 (read)UART_SendChar/100 (read)UART_Flush/107 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+ibuff1/84 (ibuff1) @0x7fac407b9e80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: UART_Reset/93 (read)UART_Init/94 (write)UART1_RX_IRQHandler/96 (read)UART_GetCharNoWait/102 (read)UART_GetCharNoWait/102 (read)UART_GetChar/103 (read)UART_GetChar/103 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+obuffarea1/83 (obuffarea1) @0x7fac407b9e00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags:
+ibuffarea1/82 (ibuffarea1) @0x7fac407b9d80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: not-ready
+  Varpool flags:
+obuff0/81 (obuff0) @0x7fac407b9d00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: UART_Reset/93 (read)UART_Init/94 (write)UART0_TX_IRQHandler/97 (read)UART0_TX_IRQHandler/97 (read)UART_SendChar/100 (read)UART_SendChar/100 (read)UART_Flush/107 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+ibuff0/80 (ibuff0) @0x7fac407b9c80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: UART_Reset/93 (read)UART_Init/94 (write)UART0_RX_IRQHandler/95 (read)UART_GetCharNoWait/102 (read)UART_GetCharNoWait/102 (read)UART_GetChar/103 (read)UART_GetChar/103 (read)UART_Flush/107 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+obuffarea0/79 (obuffarea0) @0x7fac407b9c00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: not-ready
+  Varpool flags:
+ibuffarea0/78 (ibuffarea0) @0x7fac407b9b80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public common
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: not-ready
+  Varpool flags:
+GPIOF/77 (GPIOF) @0x7fac407b9b00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+GPIOE/76 (GPIOE) @0x7fac407b9a80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+BAUD/75 (BAUD) @0x7fac407b9a00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+__NVIC_SetPriority/55 (__NVIC_SetPriority) @0x7fac40b642d0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__NVIC_ClearPendingIRQ/53 (__NVIC_ClearPendingIRQ) @0x7fac40b64000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__NVIC_EnableIRQ/48 (__NVIC_EnableIRQ) @0x7fac40b54870
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__disable_irq/25 (__disable_irq) @0x7fac40af7b40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART_SendChar/100 UART_SendChar/100 
+  Calls: 
+__enable_irq/24 (__enable_irq) @0x7fac40af79d8
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART_SendChar/100 UART_SendChar/100 
+  Calls: 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+buffer_clear/114 (buffer_clear) @0x7fac407e8870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: UART_Flush/107 UART_Flush/107 
+  Calls: 
+buffer_remove/113 (buffer_remove) @0x7fac407e8708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: UART_Flush/107 UART_Flush/107 UART_GetChar/103 UART_GetChar/103 UART_GetCharNoWait/102 UART_GetCharNoWait/102 UART1_TX_IRQHandler/98 UART0_TX_IRQHandler/97 
+  Calls: 
+buffer_insert/112 (buffer_insert) @0x7fac407e85a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: UART_SendChar/100 UART_SendChar/100 UART1_RX_IRQHandler/96 UART0_RX_IRQHandler/95 
+  Calls: 
+ClockRegisterCallback/111 (ClockRegisterCallback) @0x7fac407e82d0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: UART_Init/94 UART_Init/94 
+  Calls: 
+buffer_init/110 (buffer_init) @0x7fac407e8168
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+buffer_deinit/109 (buffer_deinit) @0x7fac407e8000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: UART_Reset/93 UART_Reset/93 UART_Reset/93 UART_Reset/93 
+  Calls: 
+ClockGetPeripheralClockFrequency/108 (ClockGetPeripheralClockFrequency) @0x7fac407d7e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: UART_SetBaudrate/86 
+  Calls: 
+UART_Flush/107 (UART_Flush) @0x7fac407d7ca8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ibuff0/80 (read)ibuff1/84 (read)obuff0/81 (read)obuff0/81 (read)obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: UART_PutCharPolling/106 buffer_remove/113 UART_PutCharPolling/106 buffer_remove/113 buffer_clear/114 buffer_clear/114 
+UART_PutCharPolling/106 (UART_PutCharPolling) @0x7fac407d7b40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: UART_Flush/107 UART_Flush/107 
+  Calls: 
+UART_DisableInterrupts/105 (UART_DisableInterrupts) @0x7fac407d79d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+UART_EnableInterrupts/104 (UART_EnableInterrupts) @0x7fac407d7870
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+UART_GetChar/103 (UART_GetChar) @0x7fac407d7708
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ibuff0/80 (read)ibuff0/80 (read)ibuff1/84 (read)ibuff1/84 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: buffer_remove/113 buffer_remove/113 
+UART_GetCharNoWait/102 (UART_GetCharNoWait) @0x7fac407d75a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ibuff0/80 (read)ibuff0/80 (read)ibuff1/84 (read)ibuff1/84 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: buffer_remove/113 buffer_remove/113 
+UART_SendString/101 (UART_SendString) @0x7fac407d7438
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: UART_SendChar/100 
+UART_SendChar/100 (UART_SendChar) @0x7fac407d72d0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: obuff0/81 (read)obuff0/81 (read)obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: UART_SendString/101 
+  Calls: buffer_insert/112 buffer_insert/112 
+UART_GetStatus/99 (UART_GetStatus) @0x7fac407d7168
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+UART1_TX_IRQHandler/98 (UART1_TX_IRQHandler) @0x7fac407d7000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: obuff1/85 (read)obuff1/85 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: buffer_remove/113 
+UART0_TX_IRQHandler/97 (UART0_TX_IRQHandler) @0x7fac407c9e10
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: obuff0/81 (read)obuff0/81 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: buffer_remove/113 
+UART1_RX_IRQHandler/96 (UART1_RX_IRQHandler) @0x7fac407c9ca8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ibuff1/84 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: buffer_insert/112 
+UART0_RX_IRQHandler/95 (UART0_RX_IRQHandler) @0x7fac407c9b40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ibuff0/80 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: buffer_insert/112 
+UART_Init/94 (UART_Init) @0x7fac407c99d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ibuffarea0/78 (addr)ibuff0/80 (write)obuffarea0/79 (addr)obuff0/81 (write)ibuffarea1/82 (addr)ibuff1/84 (write)UART0_Prepare/89 (addr)UART0_Reconfigure/91 (addr)UART1_Prepare/90 (addr)UART1_Reconfigure/92 (addr)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: ClockRegisterCallback/111 UART_TurnOn/88 UART_TurnOff/87 __NVIC_EnableIRQ/48 __NVIC_EnableIRQ/48 __NVIC_ClearPendingIRQ/53 __NVIC_ClearPendingIRQ/53 __NVIC_SetPriority/55 __NVIC_SetPriority/55 ClockRegisterCallback/111 UART_TurnOn/88 UART_TurnOff/87 __NVIC_EnableIRQ/48 __NVIC_EnableIRQ/48 __NVIC_ClearPendingIRQ/53 __NVIC_ClearPendingIRQ/53 __NVIC_SetPriority/55 __NVIC_SetPriority/55 buffer_init/110 buffer_init/110 buffer_init/110 UART_SetBaudrate/86 UART_Reset/93 
+UART_Reset/93 (UART_Reset) @0x7fac407c9870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: ibuff0/80 (read)obuff0/81 (read)ibuff1/84 (read)obuff1/85 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: UART_Init/94 
+  Calls: buffer_deinit/109 buffer_deinit/109 buffer_deinit/109 buffer_deinit/109 
+UART1_Reconfigure/92 (UART1_Reconfigure) @0x7fac407c9708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOn/88 UART_SetBaudrate/86 
+UART0_Reconfigure/91 (UART0_Reconfigure) @0x7fac407c95a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOn/88 UART_SetBaudrate/86 
+UART1_Prepare/90 (UART1_Prepare) @0x7fac407c9438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOff/87 
+UART0_Prepare/89 (UART0_Prepare) @0x7fac407c92d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: UART_TurnOff/87 
+UART_TurnOn/88 (UART_TurnOn) @0x7fac407c9168
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: UART_Init/94 UART_Init/94 UART1_Reconfigure/92 UART0_Reconfigure/91 
+  Calls: 
+UART_TurnOff/87 (UART_TurnOff) @0x7fac407c9000
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: UART_Init/94 UART_Init/94 UART1_Prepare/90 UART0_Prepare/89 
+  Calls: 
+UART_SetBaudrate/86 (UART_SetBaudrate) @0x7fac407c4e10
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: UART_Init/94 UART1_Reconfigure/92 UART0_Reconfigure/91 
+  Calls: ClockGetPeripheralClockFrequency/108 
+obuff1/85 (obuff1) @0x7fac407b9f00
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: UART1_TX_IRQHandler/98 (read)UART1_TX_IRQHandler/98 (read)UART_SendChar/100 (read)UART_SendChar/100 (read)UART_Reset/93 (read)UART_Flush/107 (read)UART_Flush/107 (read)
+  Availability: available
+  Varpool flags: initialized
+ibuff1/84 (ibuff1) @0x7fac407b9e80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: UART_GetCharNoWait/102 (read)UART_GetChar/103 (read)UART_Reset/93 (read)UART1_RX_IRQHandler/96 (read)UART_Init/94 (write)UART_GetCharNoWait/102 (read)UART_GetChar/103 (read)UART_Flush/107 (read)
+  Availability: available
+  Varpool flags: initialized
+obuffarea1/83 (obuffarea1) @0x7fac407b9e00
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public common
+  References: 
+  Referring: 
+  Availability: overwritable
+  Varpool flags:
+ibuffarea1/82 (ibuffarea1) @0x7fac407b9d80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public common
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: overwritable
+  Varpool flags:
+obuff0/81 (obuff0) @0x7fac407b9d00
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: UART0_TX_IRQHandler/97 (read)UART_SendChar/100 (read)UART0_TX_IRQHandler/97 (read)UART_Reset/93 (read)UART_SendChar/100 (read)UART_Init/94 (write)UART_Flush/107 (read)UART_Flush/107 (read)
+  Availability: available
+  Varpool flags: initialized
+ibuff0/80 (ibuff0) @0x7fac407b9c80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: UART_GetCharNoWait/102 (read)UART_GetChar/103 (read)UART_Reset/93 (read)UART0_RX_IRQHandler/95 (read)UART_Init/94 (write)UART_GetCharNoWait/102 (read)UART_GetChar/103 (read)UART_Flush/107 (read)
+  Availability: available
+  Varpool flags: initialized
+obuffarea0/79 (obuffarea0) @0x7fac407b9c00
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public common
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: overwritable
+  Varpool flags:
+ibuffarea0/78 (ibuffarea0) @0x7fac407b9b80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public common
+  References: 
+  Referring: UART_Init/94 (addr)
+  Availability: overwritable
+  Varpool flags:
+GPIOF/77 (GPIOF) @0x7fac407b9b00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+GPIOE/76 (GPIOE) @0x7fac407b9a80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+BAUD/75 (BAUD) @0x7fac407b9a00
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+__NVIC_SetPriority/55 (__NVIC_SetPriority) @0x7fac40b642d0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__NVIC_ClearPendingIRQ/53 (__NVIC_ClearPendingIRQ) @0x7fac40b64000
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+__NVIC_EnableIRQ/48 (__NVIC_EnableIRQ) @0x7fac40b54870
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: UART_Init/94 UART_Init/94 UART_Init/94 UART_Init/94 
+  Calls: 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: obuff1 ibuff1 obuffarea1 ibuffarea1 obuff0 ibuff0 obuffarea0 ibuffarea0 GPIOF GPIOE BAUD
+Removing variables:
+
+Final Symbol table:
+
+buffer_clear/114 (buffer_clear) @0x7fac407e8870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+buffer_remove/113 (buffer_remove) @0x7fac407e8708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+buffer_insert/112 (buffer_insert) @0x7fac407e85a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ClockRegisterCallback/111 (ClockRegisterCallback) @0x7fac407e82d0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+buffer_init/110 (buffer_init) @0x7fac407e8168
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+buffer_deinit/109 (buffer_deinit) @0x7fac407e8000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ClockGetPeripheralClockFrequency/108 (ClockGetPeripheralClockFrequency) @0x7fac407d7e10
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_Flush/107 (UART_Flush) @0x7fac407d7ca8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART_Flush (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_PutCharPolling/106 (UART_PutCharPolling) @0x7fac407d7b40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART_PutCharPolling (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_DisableInterrupts/105 (UART_DisableInterrupts) @0x7fac407d79d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART_DisableInterrupts (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_EnableInterrupts/104 (UART_EnableInterrupts) @0x7fac407d7870
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART_EnableInterrupts (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_GetChar/103 (UART_GetChar) @0x7fac407d7708
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART_GetChar (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_GetCharNoWait/102 (UART_GetCharNoWait) @0x7fac407d75a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART_GetCharNoWait (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_SendString/101 (UART_SendString) @0x7fac407d7438
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART_SendString (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_SendChar/100 (UART_SendChar) @0x7fac407d72d0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART_SendChar (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_GetStatus/99 (UART_GetStatus) @0x7fac407d7168
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART_GetStatus (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART1_TX_IRQHandler/98 (UART1_TX_IRQHandler) @0x7fac407d7000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART1_TX_IRQHandler (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART0_TX_IRQHandler/97 (UART0_TX_IRQHandler) @0x7fac407c9e10
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART0_TX_IRQHandler (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART1_RX_IRQHandler/96 (UART1_RX_IRQHandler) @0x7fac407c9ca8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART1_RX_IRQHandler (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART0_RX_IRQHandler/95 (UART0_RX_IRQHandler) @0x7fac407c9b40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART0_RX_IRQHandler (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_Init/94 (UART_Init) @0x7fac407c99d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_Reset/93 (UART_Reset) @0x7fac407c9870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.UART_Reset (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART1_Reconfigure/92 (UART1_Reconfigure) @0x7fac407c9708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.UART1_Reconfigure (implicit_section)
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART0_Reconfigure/91 (UART0_Reconfigure) @0x7fac407c95a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.UART0_Reconfigure (implicit_section)
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART1_Prepare/90 (UART1_Prepare) @0x7fac407c9438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.UART1_Prepare (implicit_section)
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART0_Prepare/89 (UART0_Prepare) @0x7fac407c92d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.UART0_Prepare (implicit_section)
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_TurnOn/88 (UART_TurnOn) @0x7fac407c9168
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.UART_TurnOn (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+UART_TurnOff/87 (UART_TurnOff) @0x7fac407c9000
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.UART_TurnOff (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+UART_SetBaudrate/86 (UART_SetBaudrate) @0x7fac407c4e10
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.UART_SetBaudrate (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+obuff1/85 (obuff1) @0x7fac407b9f00
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.obuff1 (implicit_section)
+  Aux: @0x1
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+ibuff1/84 (ibuff1) @0x7fac407b9e80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.ibuff1 (implicit_section)
+  Aux: @0x7fac407b9f00
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+obuffarea1/83 (obuffarea1) @0x7fac407b9e00
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public common
+  Aux: @0x7fac407b9e80
+  References: 
+  Referring: 
+  Availability: overwritable
+  Varpool flags:
+ibuffarea1/82 (ibuffarea1) @0x7fac407b9d80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public common
+  Aux: @0x7fac407b9e00
+  References: 
+  Referring: 
+  Availability: overwritable
+  Varpool flags:
+obuff0/81 (obuff0) @0x7fac407b9d00
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.obuff0 (implicit_section)
+  Aux: @0x7fac407b9d80
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+ibuff0/80 (ibuff0) @0x7fac407b9c80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.ibuff0 (implicit_section)
+  Aux: @0x7fac407b9d00
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+obuffarea0/79 (obuffarea0) @0x7fac407b9c00
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public common
+  Aux: @0x7fac407b9c80
+  References: 
+  Referring: 
+  Availability: overwritable
+  Varpool flags:
+ibuffarea0/78 (ibuffarea0) @0x7fac407b9b80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public common
+  Aux: @0x7fac407b9c00
+  References: 
+  Referring: 
+  Availability: overwritable
+  Varpool flags:
+GPIOF/77 (GPIOF) @0x7fac407b9b00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.GPIOF (implicit_section)
+  Aux: @0x7fac407b9b80
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+GPIOE/76 (GPIOE) @0x7fac407b9a80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.GPIOE (implicit_section)
+  Aux: @0x7fac407b9b00
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+BAUD/75 (BAUD) @0x7fac407b9a00
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.BAUD (implicit_section)
+  Aux: @0x7fac407b9a80
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+__NVIC_SetPriority/55 (__NVIC_SetPriority) @0x7fac40b642d0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.__NVIC_SetPriority (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+__NVIC_ClearPendingIRQ/53 (__NVIC_ClearPendingIRQ) @0x7fac40b64000
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.__NVIC_ClearPendingIRQ (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+__NVIC_EnableIRQ/48 (__NVIC_EnableIRQ) @0x7fac40b54870
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.__NVIC_EnableIRQ (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 

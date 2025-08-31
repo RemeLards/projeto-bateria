@@ -1,0 +1,2536 @@
+Trivially needed symbols: _write _wait _unlink _times _stat _sbrk _read _open _lseek _link _kill _isatty _getpid _fstat _fork _execve environ __env _close _exit _main tty_read_lb tty_read_un tty_write ttyconfig
+
+
+Initial Symbol table:
+
+abort/114 (abort) @0x7f46c677b9d8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: _sbrk/101 
+  Calls: 
+__HeapLimit/113 (__HeapLimit) @0x7f46c6795280
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: _sbrk/101 (addr)
+  Availability: not-ready
+  Varpool flags:
+_end/112 (_end) @0x7f46c6795180
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: _sbrk/101 (addr)
+  Availability: not-ready
+  Varpool flags:
+errno/111 (errno) @0x7f46c6785880
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: _execve/90 (write)_fork/91 (write)_kill/95 (write)_link/96 (write)_unlink/104 (write)_wait/105 (write)
+  Availability: not-ready
+  Varpool flags:
+UART_Init/110 (UART_Init) @0x7f46c677b870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialInit/76 
+  Calls: 
+UART_Flush/109 (UART_Flush) @0x7f46c677b708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialFlush/80 
+  Calls: 
+UART_GetChar/108 (UART_GetChar) @0x7f46c677b5a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialRead/78 
+  Calls: 
+UART_SendChar/107 (UART_SendChar) @0x7f46c677b438
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialWrite/77 
+  Calls: 
+_write/106 (_write) @0x7f46c677b2d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x1796a00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: _sbrk/101 
+  Calls: tty_write/82 
+_wait/105 (_wait) @0x7f46c677b168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c677b2d0
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_unlink/104 (_unlink) @0x7f46c677b000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c677b168
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_times/103 (_times) @0x7f46c6774e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c677b000
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_stat/102 (_stat) @0x7f46c6774ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c6774e10
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_sbrk/101 (_sbrk) @0x7f46c6774b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c6774ca8
+  References: heap_end/100 (read)heap_end/100 (write)_end/112 (addr)heap_end/100 (read)heap_end/100 (read)__HeapLimit/113 (addr)heap_end/100 (read)heap_end/100 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: abort/114 _write/106 
+heap_end/100 (heap_end) @0x7f46c6776680
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f46c6774ca8
+  References: 
+  Referring: _sbrk/101 (read)_sbrk/101 (write)_sbrk/101 (read)_sbrk/101 (read)_sbrk/101 (read)_sbrk/101 (write)
+  Availability: not-ready
+  Varpool flags:
+_read/99 (_read) @0x7f46c67749d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c6774b40
+  References: ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tty_read_lb/84 tty_read_un/83 
+_open/98 (_open) @0x7f46c6774870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c67749d8
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_lseek/97 (_lseek) @0x7f46c6774708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c6774870
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_link/96 (_link) @0x7f46c67745a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c6774708
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_kill/95 (_kill) @0x7f46c6774438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c67745a0
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_isatty/94 (_isatty) @0x7f46c67742d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c6774438
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_getpid/93 (_getpid) @0x7f46c6774168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c67742d0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_fstat/92 (_fstat) @0x7f46c6774000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c6774168
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_fork/91 (_fork) @0x7f46c676ce10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c6774000
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_execve/90 (_execve) @0x7f46c676cca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c676ce10
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+environ/89 (environ) @0x7f46c676eb00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c676cca8
+  References: __env/88 (addr)
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized
+__env/88 (__env) @0x7f46c676ea80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c676eb00
+  References: 
+  Referring: environ/89 (addr)
+  Availability: not-ready
+  Varpool flags: initialized
+_close/87 (_close) @0x7f46c676cb40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c676ea80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_exit/86 (_exit) @0x7f46c676c9d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c676cb40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_main/85 (_main) @0x7f46c676c870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c676c9d8
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SerialInit/76 
+tty_read_lb/84 (tty_read_lb) @0x7f46c676c708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c676c870
+  References: ttyconfig/81 (read)ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: _read/99 
+  Calls: SerialWrite/77 SerialWrite/77 SerialRead/78 SerialWrite/77 SerialWrite/77 SerialWrite/77 SerialWrite/77 SerialFlush/80 
+tty_read_un/83 (tty_read_un) @0x7f46c676c5a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c676c708
+  References: ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: _read/99 
+  Calls: SerialWrite/77 SerialRead/78 
+tty_write/82 (tty_write) @0x7f46c676c438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0x7f46c676c5a0
+  References: ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: _write/106 
+  Calls: SerialWrite/77 SerialWrite/77 
+ttyconfig/81 (ttyconfig) @0x7f46c6765f00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0x7f46c676c438
+  References: 
+  Referring: tty_write/82 (read)tty_read_un/83 (read)tty_read_lb/84 (read)tty_read_lb/84 (read)_read/99 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+SerialFlush/80 (SerialFlush) @0x7f46c676c168
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x7f46c676c870
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tty_read_lb/84 
+  Calls: UART_Flush/109 
+SerialStatus/79 (SerialStatus) @0x7f46c676c000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SerialRead/78 (SerialRead) @0x7f46c6bc2e10
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x7f46c676c708
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tty_read_lb/84 tty_read_un/83 
+  Calls: UART_GetChar/108 
+SerialWrite/77 (SerialWrite) @0x7f46c6bc2ca8
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x7f46c676c5a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_un/83 tty_write/82 tty_write/82 
+  Calls: UART_SendChar/107 
+SerialInit/76 (SerialInit) @0x7f46c6bc2b40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0x7f46c676c9d8
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: _main/85 
+  Calls: UART_Init/110 
+GetStackPointer/75 (GetStackPointer) @0x7f46c6bc2708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SystemCoreClockUpdate/74 (SystemCoreClockUpdate) @0x7f46c6fc6b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_CheckChar/73 (ITM_CheckChar) @0x7f46c6fc6438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_ReceiveChar/72 (ITM_ReceiveChar) @0x7f46c6fc62d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ITM_SendChar/71 (ITM_SendChar) @0x7f46c6fc6168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SysTick_Config/70 (SysTick_Config) @0x7f46c6fbde10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+SCB_GetFPUType/69 (SCB_GetFPUType) @0x7f46c6fbdca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Load/68 (ARM_MPU_Load) @0x7f46c6fbdb40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_OrderedMemcpy/67 (ARM_MPU_OrderedMemcpy) @0x7f46c6fbd9d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_SetRegionEx/66 (ARM_MPU_SetRegionEx) @0x7f46c6fbd870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_SetRegion/65 (ARM_MPU_SetRegion) @0x7f46c6fbd708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_ClrRegion/64 (ARM_MPU_ClrRegion) @0x7f46c6fbd5a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Disable/63 (ARM_MPU_Disable) @0x7f46c6fbd438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+ARM_MPU_Enable/62 (ARM_MPU_Enable) @0x7f46c6fbd2d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SystemReset/61 (__NVIC_SystemReset) @0x7f46c6fb1b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetVector/60 (__NVIC_GetVector) @0x7f46c6fb19d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetVector/59 (__NVIC_SetVector) @0x7f46c6fb1870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+NVIC_DecodePriority/58 (NVIC_DecodePriority) @0x7f46c6fb1708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+NVIC_EncodePriority/57 (NVIC_EncodePriority) @0x7f46c6fb15a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPriority/56 (__NVIC_GetPriority) @0x7f46c6fb1438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPriority/55 (__NVIC_SetPriority) @0x7f46c6fb12d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetActive/54 (__NVIC_GetActive) @0x7f46c6fb1168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_ClearPendingIRQ/53 (__NVIC_ClearPendingIRQ) @0x7f46c6fb1000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPendingIRQ/52 (__NVIC_SetPendingIRQ) @0x7f46c6f9fe10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPendingIRQ/51 (__NVIC_GetPendingIRQ) @0x7f46c6f9fca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_DisableIRQ/50 (__NVIC_DisableIRQ) @0x7f46c6f9fb40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetEnableIRQ/49 (__NVIC_GetEnableIRQ) @0x7f46c6f9f9d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_EnableIRQ/48 (__NVIC_EnableIRQ) @0x7f46c6f9f870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_GetPriorityGrouping/47 (__NVIC_GetPriorityGrouping) @0x7f46c6f9f708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__NVIC_SetPriorityGrouping/46 (__NVIC_SetPriorityGrouping) @0x7f46c6f9f5a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_FPSCR/45 (__set_FPSCR) @0x7f46c6f52870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_FPSCR/44 (__get_FPSCR) @0x7f46c6f52708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_FAULTMASK/43 (__set_FAULTMASK) @0x7f46c6f525a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_FAULTMASK/42 (__get_FAULTMASK) @0x7f46c6f52438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_BASEPRI_MAX/41 (__set_BASEPRI_MAX) @0x7f46c6f522d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_BASEPRI/40 (__set_BASEPRI) @0x7f46c6f52168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_BASEPRI/39 (__get_BASEPRI) @0x7f46c6f52000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__disable_fault_irq/38 (__disable_fault_irq) @0x7f46c6f4ee10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__enable_fault_irq/37 (__enable_fault_irq) @0x7f46c6f4eca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_PRIMASK/36 (__set_PRIMASK) @0x7f46c6f4eb40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_PRIMASK/35 (__get_PRIMASK) @0x7f46c6f4e9d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_MSP/34 (__set_MSP) @0x7f46c6f4e870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_MSP/33 (__get_MSP) @0x7f46c6f4e708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_PSP/32 (__set_PSP) @0x7f46c6f4e5a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_PSP/31 (__get_PSP) @0x7f46c6f4e438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_xPSR/30 (__get_xPSR) @0x7f46c6f4e2d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_APSR/29 (__get_APSR) @0x7f46c6f4e168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_IPSR/28 (__get_IPSR) @0x7f46c6f4e000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__set_CONTROL/27 (__set_CONTROL) @0x7f46c6f45e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__get_CONTROL/26 (__get_CONTROL) @0x7f46c6f45ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__disable_irq/25 (__disable_irq) @0x7f46c6f45b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__enable_irq/24 (__enable_irq) @0x7f46c6f459d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRT/23 (__STRT) @0x7f46c6f45870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRHT/22 (__STRHT) @0x7f46c6f45708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STRBT/21 (__STRBT) @0x7f46c6f455a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRT/20 (__LDRT) @0x7f46c6f45438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRHT/19 (__LDRHT) @0x7f46c6f452d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDRBT/18 (__LDRBT) @0x7f46c6f45168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__RRX/17 (__RRX) @0x7f46c6f45000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__CLREX/16 (__CLREX) @0x7f46c6f3ae10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXW/15 (__STREXW) @0x7f46c6f3aca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXH/14 (__STREXH) @0x7f46c6f3ab40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__STREXB/13 (__STREXB) @0x7f46c6f3a9d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXW/12 (__LDREXW) @0x7f46c6f3a870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXH/11 (__LDREXH) @0x7f46c6f3a708
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__LDREXB/10 (__LDREXB) @0x7f46c6f3a5a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__CLZ/9 (__CLZ) @0x7f46c6f3a438
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__RBIT/8 (__RBIT) @0x7f46c6f3a2d0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__ROR/7 (__ROR) @0x7f46c6f3a168
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REVSH/6 (__REVSH) @0x7f46c6f3a000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REV16/5 (__REV16) @0x7f46c6f30e10
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__REV/4 (__REV) @0x7f46c6f30ca8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__DMB/3 (__DMB) @0x7f46c6f30b40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__DSB/2 (__DSB) @0x7f46c6f309d8
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__ISB/1 (__ISB) @0x7f46c6f30870
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__cmsis_start/0 (__cmsis_start) @0x7f46c6f305a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: SerialStatus GetStackPointer SystemCoreClockUpdate ITM_CheckChar ITM_ReceiveChar ITM_SendChar SysTick_Config SCB_GetFPUType ARM_MPU_Load ARM_MPU_OrderedMemcpy ARM_MPU_SetRegionEx ARM_MPU_SetRegion ARM_MPU_ClrRegion ARM_MPU_Disable ARM_MPU_Enable __NVIC_SystemReset __NVIC_GetVector __NVIC_SetVector NVIC_DecodePriority NVIC_EncodePriority __NVIC_GetPriority __NVIC_SetPriority __NVIC_GetActive __NVIC_ClearPendingIRQ __NVIC_SetPendingIRQ __NVIC_GetPendingIRQ __NVIC_DisableIRQ __NVIC_GetEnableIRQ __NVIC_EnableIRQ __NVIC_GetPriorityGrouping __NVIC_SetPriorityGrouping __set_FPSCR __get_FPSCR __set_FAULTMASK __get_FAULTMASK __set_BASEPRI_MAX __set_BASEPRI __get_BASEPRI __disable_fault_irq __enable_fault_irq __set_PRIMASK __get_PRIMASK __set_MSP __get_MSP __set_PSP __get_PSP __get_xPSR __get_APSR __get_IPSR __set_CONTROL __get_CONTROL __disable_irq __enable_irq __STRT __STRHT __STRBT __LDRT __LDRHT __LDRBT __RRX __CLREX __STREXW __STREXH __STREXB __LDREXW __LDREXH __LDREXB __CLZ __RBIT __ROR __REVSH __REV16 __REV __DMB __DSB __ISB __cmsis_start
+
+Reclaimed Symbol table:
+
+abort/114 (abort) @0x7f46c677b9d8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: _sbrk/101 
+  Calls: 
+__HeapLimit/113 (__HeapLimit) @0x7f46c6795280
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: _sbrk/101 (addr)
+  Availability: not-ready
+  Varpool flags:
+_end/112 (_end) @0x7f46c6795180
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: _sbrk/101 (addr)
+  Availability: not-ready
+  Varpool flags:
+errno/111 (errno) @0x7f46c6785880
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: _execve/90 (write)_fork/91 (write)_kill/95 (write)_link/96 (write)_unlink/104 (write)_wait/105 (write)
+  Availability: not-ready
+  Varpool flags:
+UART_Init/110 (UART_Init) @0x7f46c677b870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialInit/76 
+  Calls: 
+UART_Flush/109 (UART_Flush) @0x7f46c677b708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialFlush/80 
+  Calls: 
+UART_GetChar/108 (UART_GetChar) @0x7f46c677b5a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialRead/78 
+  Calls: 
+UART_SendChar/107 (UART_SendChar) @0x7f46c677b438
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialWrite/77 
+  Calls: 
+_write/106 (_write) @0x7f46c677b2d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: _sbrk/101 
+  Calls: tty_write/82 
+_wait/105 (_wait) @0x7f46c677b168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_unlink/104 (_unlink) @0x7f46c677b000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_times/103 (_times) @0x7f46c6774e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_stat/102 (_stat) @0x7f46c6774ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_sbrk/101 (_sbrk) @0x7f46c6774b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: heap_end/100 (read)heap_end/100 (write)_end/112 (addr)heap_end/100 (read)heap_end/100 (read)__HeapLimit/113 (addr)heap_end/100 (read)heap_end/100 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: abort/114 _write/106 
+heap_end/100 (heap_end) @0x7f46c6776680
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _sbrk/101 (read)_sbrk/101 (write)_sbrk/101 (read)_sbrk/101 (read)_sbrk/101 (read)_sbrk/101 (write)
+  Availability: not-ready
+  Varpool flags:
+_read/99 (_read) @0x7f46c67749d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tty_read_lb/84 tty_read_un/83 
+_open/98 (_open) @0x7f46c6774870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_lseek/97 (_lseek) @0x7f46c6774708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_link/96 (_link) @0x7f46c67745a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_kill/95 (_kill) @0x7f46c6774438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_isatty/94 (_isatty) @0x7f46c67742d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_getpid/93 (_getpid) @0x7f46c6774168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_fstat/92 (_fstat) @0x7f46c6774000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_fork/91 (_fork) @0x7f46c676ce10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_execve/90 (_execve) @0x7f46c676cca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+environ/89 (environ) @0x7f46c676eb00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: __env/88 (addr)
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized
+__env/88 (__env) @0x7f46c676ea80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: environ/89 (addr)
+  Availability: not-ready
+  Varpool flags: initialized
+_close/87 (_close) @0x7f46c676cb40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_exit/86 (_exit) @0x7f46c676c9d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_main/85 (_main) @0x7f46c676c870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SerialInit/76 
+tty_read_lb/84 (tty_read_lb) @0x7f46c676c708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ttyconfig/81 (read)ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: _read/99 
+  Calls: SerialWrite/77 SerialWrite/77 SerialRead/78 SerialWrite/77 SerialWrite/77 SerialWrite/77 SerialWrite/77 SerialFlush/80 
+tty_read_un/83 (tty_read_un) @0x7f46c676c5a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: _read/99 
+  Calls: SerialWrite/77 SerialRead/78 
+tty_write/82 (tty_write) @0x7f46c676c438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: _write/106 
+  Calls: SerialWrite/77 SerialWrite/77 
+ttyconfig/81 (ttyconfig) @0x7f46c6765f00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tty_write/82 (read)tty_read_un/83 (read)tty_read_lb/84 (read)tty_read_lb/84 (read)_read/99 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+SerialFlush/80 (SerialFlush) @0x7f46c676c168
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tty_read_lb/84 
+  Calls: UART_Flush/109 
+SerialRead/78 (SerialRead) @0x7f46c6bc2e10
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tty_read_lb/84 tty_read_un/83 
+  Calls: UART_GetChar/108 
+SerialWrite/77 (SerialWrite) @0x7f46c6bc2ca8
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_un/83 tty_write/82 tty_write/82 
+  Calls: UART_SendChar/107 
+SerialInit/76 (SerialInit) @0x7f46c6bc2b40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: _main/85 
+  Calls: UART_Init/110 
+
+
+Initial Symbol table:
+
+abort/114 (abort) @0x7f46c677b9d8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: _sbrk/101 
+  Calls: 
+__HeapLimit/113 (__HeapLimit) @0x7f46c6795280
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: _sbrk/101 (addr)
+  Availability: not-ready
+  Varpool flags:
+_end/112 (_end) @0x7f46c6795180
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: _sbrk/101 (addr)
+  Availability: not-ready
+  Varpool flags:
+errno/111 (errno) @0x7f46c6785880
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: _execve/90 (write)_fork/91 (write)_kill/95 (write)_link/96 (write)_unlink/104 (write)_wait/105 (write)
+  Availability: not-ready
+  Varpool flags:
+UART_Init/110 (UART_Init) @0x7f46c677b870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialInit/76 
+  Calls: 
+UART_Flush/109 (UART_Flush) @0x7f46c677b708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialFlush/80 
+  Calls: 
+UART_GetChar/108 (UART_GetChar) @0x7f46c677b5a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialRead/78 
+  Calls: 
+UART_SendChar/107 (UART_SendChar) @0x7f46c677b438
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialWrite/77 
+  Calls: 
+_write/106 (_write) @0x7f46c677b2d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: _sbrk/101 
+  Calls: tty_write/82 
+_wait/105 (_wait) @0x7f46c677b168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_unlink/104 (_unlink) @0x7f46c677b000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_times/103 (_times) @0x7f46c6774e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_stat/102 (_stat) @0x7f46c6774ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_sbrk/101 (_sbrk) @0x7f46c6774b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: heap_end.6721/100 (read)heap_end.6721/100 (write)_end/112 (addr)heap_end.6721/100 (read)heap_end.6721/100 (read)__HeapLimit/113 (addr)heap_end.6721/100 (read)heap_end.6721/100 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: abort/114 _write/106 
+heap_end.6721/100 (heap_end) @0x7f46c6776680
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _sbrk/101 (read)_sbrk/101 (write)_sbrk/101 (read)_sbrk/101 (read)_sbrk/101 (read)_sbrk/101 (write)
+  Availability: not-ready
+  Varpool flags:
+_read/99 (_read) @0x7f46c67749d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tty_read_lb/84 tty_read_un/83 
+_open/98 (_open) @0x7f46c6774870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_lseek/97 (_lseek) @0x7f46c6774708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_link/96 (_link) @0x7f46c67745a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_kill/95 (_kill) @0x7f46c6774438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_isatty/94 (_isatty) @0x7f46c67742d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_getpid/93 (_getpid) @0x7f46c6774168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_fstat/92 (_fstat) @0x7f46c6774000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_fork/91 (_fork) @0x7f46c676ce10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_execve/90 (_execve) @0x7f46c676cca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+environ/89 (environ) @0x7f46c676eb00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: __env/88 (addr)
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized
+__env/88 (__env) @0x7f46c676ea80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: environ/89 (addr)
+  Availability: not-ready
+  Varpool flags: initialized
+_close/87 (_close) @0x7f46c676cb40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_exit/86 (_exit) @0x7f46c676c9d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_main/85 (_main) @0x7f46c676c870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SerialInit/76 
+tty_read_lb/84 (tty_read_lb) @0x7f46c676c708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ttyconfig/81 (read)ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: _read/99 
+  Calls: SerialWrite/77 SerialWrite/77 SerialRead/78 SerialWrite/77 SerialWrite/77 SerialWrite/77 SerialWrite/77 SerialFlush/80 
+tty_read_un/83 (tty_read_un) @0x7f46c676c5a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: _read/99 
+  Calls: SerialWrite/77 SerialRead/78 
+tty_write/82 (tty_write) @0x7f46c676c438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: _write/106 
+  Calls: SerialWrite/77 SerialWrite/77 
+ttyconfig/81 (ttyconfig) @0x7f46c6765f00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tty_write/82 (read)tty_read_un/83 (read)tty_read_lb/84 (read)tty_read_lb/84 (read)_read/99 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+SerialFlush/80 (SerialFlush) @0x7f46c676c168
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tty_read_lb/84 
+  Calls: UART_Flush/109 
+SerialRead/78 (SerialRead) @0x7f46c6bc2e10
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tty_read_lb/84 tty_read_un/83 
+  Calls: UART_GetChar/108 
+SerialWrite/77 (SerialWrite) @0x7f46c6bc2ca8
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_un/83 tty_write/82 tty_write/82 
+  Calls: UART_SendChar/107 
+SerialInit/76 (SerialInit) @0x7f46c6bc2b40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: _main/85 
+  Calls: UART_Init/110 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+abort/114 (abort) @0x7f46c677b9d8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: _sbrk/101 
+  Calls: 
+__HeapLimit/113 (__HeapLimit) @0x7f46c6795280
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: _sbrk/101 (addr)
+  Availability: not-ready
+  Varpool flags:
+_end/112 (_end) @0x7f46c6795180
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: _sbrk/101 (addr)
+  Availability: not-ready
+  Varpool flags:
+errno/111 (errno) @0x7f46c6785880
+  Type: variable
+  Visibility: external public common
+  References: 
+  Referring: _execve/90 (write)_fork/91 (write)_kill/95 (write)_link/96 (write)_unlink/104 (write)_wait/105 (write)
+  Availability: not-ready
+  Varpool flags:
+UART_Init/110 (UART_Init) @0x7f46c677b870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialInit/76 
+  Calls: 
+UART_Flush/109 (UART_Flush) @0x7f46c677b708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialFlush/80 
+  Calls: 
+UART_GetChar/108 (UART_GetChar) @0x7f46c677b5a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialRead/78 
+  Calls: 
+UART_SendChar/107 (UART_SendChar) @0x7f46c677b438
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SerialWrite/77 
+  Calls: 
+_write/106 (_write) @0x7f46c677b2d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: _sbrk/101 
+  Calls: tty_write/82 
+_wait/105 (_wait) @0x7f46c677b168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_unlink/104 (_unlink) @0x7f46c677b000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_times/103 (_times) @0x7f46c6774e10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_stat/102 (_stat) @0x7f46c6774ca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_sbrk/101 (_sbrk) @0x7f46c6774b40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: heap_end.6721/100 (read)heap_end.6721/100 (write)_end/112 (addr)heap_end.6721/100 (read)heap_end.6721/100 (read)__HeapLimit/113 (addr)heap_end.6721/100 (read)heap_end.6721/100 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: abort/114 _write/106 
+heap_end.6721/100 (heap_end) @0x7f46c6776680
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _sbrk/101 (read)_sbrk/101 (write)_sbrk/101 (read)_sbrk/101 (read)_sbrk/101 (read)_sbrk/101 (write)
+  Availability: not-ready
+  Varpool flags:
+_read/99 (_read) @0x7f46c67749d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tty_read_lb/84 tty_read_un/83 
+_open/98 (_open) @0x7f46c6774870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_lseek/97 (_lseek) @0x7f46c6774708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_link/96 (_link) @0x7f46c67745a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_kill/95 (_kill) @0x7f46c6774438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_isatty/94 (_isatty) @0x7f46c67742d0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_getpid/93 (_getpid) @0x7f46c6774168
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_fstat/92 (_fstat) @0x7f46c6774000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_fork/91 (_fork) @0x7f46c676ce10
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_execve/90 (_execve) @0x7f46c676cca8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+environ/89 (environ) @0x7f46c676eb00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: __env/88 (addr)
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized
+__env/88 (__env) @0x7f46c676ea80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: environ/89 (addr)
+  Availability: not-ready
+  Varpool flags: initialized
+_close/87 (_close) @0x7f46c676cb40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_exit/86 (_exit) @0x7f46c676c9d8
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+_main/85 (_main) @0x7f46c676c870
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SerialInit/76 
+tty_read_lb/84 (tty_read_lb) @0x7f46c676c708
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ttyconfig/81 (read)ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: _read/99 
+  Calls: SerialWrite/77 SerialWrite/77 SerialRead/78 SerialWrite/77 SerialWrite/77 SerialWrite/77 SerialWrite/77 SerialFlush/80 
+tty_read_un/83 (tty_read_un) @0x7f46c676c5a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: _read/99 
+  Calls: SerialWrite/77 SerialRead/78 
+tty_write/82 (tty_write) @0x7f46c676c438
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ttyconfig/81 (read)
+  Referring: 
+  Function flags: body
+  Called by: _write/106 
+  Calls: SerialWrite/77 SerialWrite/77 
+ttyconfig/81 (ttyconfig) @0x7f46c6765f00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tty_write/82 (read)tty_read_un/83 (read)tty_read_lb/84 (read)tty_read_lb/84 (read)_read/99 (read)
+  Availability: not-ready
+  Varpool flags: initialized
+SerialFlush/80 (SerialFlush) @0x7f46c676c168
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tty_read_lb/84 
+  Calls: UART_Flush/109 
+SerialRead/78 (SerialRead) @0x7f46c6bc2e10
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tty_read_lb/84 tty_read_un/83 
+  Calls: UART_GetChar/108 
+SerialWrite/77 (SerialWrite) @0x7f46c6bc2ca8
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_un/83 tty_write/82 tty_write/82 
+  Calls: UART_SendChar/107 
+SerialInit/76 (SerialInit) @0x7f46c6bc2b40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: _main/85 
+  Calls: UART_Init/110 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+abort/114 (abort) @0x7f46c677b9d8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: _sbrk/101 
+  Calls: 
+__HeapLimit/113 (__HeapLimit) @0x7f46c6795280
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public common
+  References: 
+  Referring: _sbrk/101 (addr)
+  Availability: not_available
+  Varpool flags:
+_end/112 (_end) @0x7f46c6795180
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public common
+  References: 
+  Referring: _sbrk/101 (addr)
+  Availability: not_available
+  Varpool flags:
+errno/111 (errno) @0x7f46c6785880
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public common
+  References: 
+  Referring: _link/96 (write)_unlink/104 (write)_execve/90 (write)_fork/91 (write)_kill/95 (write)_wait/105 (write)
+  Availability: not_available
+  Varpool flags:
+UART_Init/110 (UART_Init) @0x7f46c677b870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: SerialInit/76 
+  Calls: 
+UART_Flush/109 (UART_Flush) @0x7f46c677b708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: SerialFlush/80 
+  Calls: 
+UART_GetChar/108 (UART_GetChar) @0x7f46c677b5a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: SerialRead/78 
+  Calls: 
+UART_SendChar/107 (UART_SendChar) @0x7f46c677b438
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: SerialWrite/77 
+  Calls: 
+_write/106 (_write) @0x7f46c677b2d0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: _sbrk/101 
+  Calls: tty_write/82 
+_wait/105 (_wait) @0x7f46c677b168
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_unlink/104 (_unlink) @0x7f46c677b000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_times/103 (_times) @0x7f46c6774e10
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_stat/102 (_stat) @0x7f46c6774ca8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_sbrk/101 (_sbrk) @0x7f46c6774b40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: heap_end.6721/100 (read)heap_end.6721/100 (write)_end/112 (addr)heap_end.6721/100 (read)heap_end.6721/100 (read)__HeapLimit/113 (addr)heap_end.6721/100 (read)heap_end.6721/100 (write)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: abort/114 _write/106 
+heap_end.6721/100 (heap_end) @0x7f46c6776680
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: _sbrk/101 (read)_sbrk/101 (write)_sbrk/101 (read)_sbrk/101 (read)_sbrk/101 (read)_sbrk/101 (write)
+  Availability: available
+  Varpool flags:
+_read/99 (_read) @0x7f46c67749d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ttyconfig/81 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tty_read_lb/84 tty_read_un/83 
+_open/98 (_open) @0x7f46c6774870
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_lseek/97 (_lseek) @0x7f46c6774708
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_link/96 (_link) @0x7f46c67745a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_kill/95 (_kill) @0x7f46c6774438
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_isatty/94 (_isatty) @0x7f46c67742d0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_getpid/93 (_getpid) @0x7f46c6774168
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_fstat/92 (_fstat) @0x7f46c6774000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_fork/91 (_fork) @0x7f46c676ce10
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_execve/90 (_execve) @0x7f46c676cca8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: errno/111 (write)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+environ/89 (environ) @0x7f46c676eb00
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: __env/88 (addr)
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+__env/88 (__env) @0x7f46c676ea80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: environ/89 (addr)
+  Availability: available
+  Varpool flags: initialized
+_close/87 (_close) @0x7f46c676cb40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_exit/86 (_exit) @0x7f46c676c9d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+_main/85 (_main) @0x7f46c676c870
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SerialInit/76 
+tty_read_lb/84 (tty_read_lb) @0x7f46c676c708
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ttyconfig/81 (read)ttyconfig/81 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: _read/99 
+  Calls: SerialWrite/77 SerialWrite/77 SerialRead/78 SerialWrite/77 SerialWrite/77 SerialWrite/77 SerialWrite/77 SerialFlush/80 
+tty_read_un/83 (tty_read_un) @0x7f46c676c5a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ttyconfig/81 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: _read/99 
+  Calls: SerialWrite/77 SerialRead/78 
+tty_write/82 (tty_write) @0x7f46c676c438
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ttyconfig/81 (read)
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: _write/106 
+  Calls: SerialWrite/77 SerialWrite/77 
+ttyconfig/81 (ttyconfig) @0x7f46c6765f00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tty_read_un/83 (read)tty_read_lb/84 (read)tty_write/82 (read)tty_read_lb/84 (read)_read/99 (read)
+  Availability: available
+  Varpool flags: initialized
+SerialFlush/80 (SerialFlush) @0x7f46c676c168
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: tty_read_lb/84 
+  Calls: UART_Flush/109 
+SerialRead/78 (SerialRead) @0x7f46c6bc2e10
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: tty_read_lb/84 tty_read_un/83 
+  Calls: UART_GetChar/108 
+SerialWrite/77 (SerialWrite) @0x7f46c6bc2ca8
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_lb/84 tty_read_un/83 tty_write/82 tty_write/82 
+  Calls: UART_SendChar/107 
+SerialInit/76 (SerialInit) @0x7f46c6bc2b40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: _main/85 
+  Calls: UART_Init/110 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: heap_end.6721 environ __env ttyconfig
+Removing variables:
+
+Final Symbol table:
+
+abort/114 (abort) @0x7f46c677b9d8
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+__HeapLimit/113 (__HeapLimit) @0x7f46c6795280
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public common
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+_end/112 (_end) @0x7f46c6795180
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public common
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+errno/111 (errno) @0x7f46c6785880
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public common
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+UART_Init/110 (UART_Init) @0x7f46c677b870
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_Flush/109 (UART_Flush) @0x7f46c677b708
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_GetChar/108 (UART_GetChar) @0x7f46c677b5a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+UART_SendChar/107 (UART_SendChar) @0x7f46c677b438
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+_write/106 (_write) @0x7f46c677b2d0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._write (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_wait/105 (_wait) @0x7f46c677b168
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._wait (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_unlink/104 (_unlink) @0x7f46c677b000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._unlink (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_times/103 (_times) @0x7f46c6774e10
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._times (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_stat/102 (_stat) @0x7f46c6774ca8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._stat (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_sbrk/101 (_sbrk) @0x7f46c6774b40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._sbrk (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+heap_end.6721/100 (heap_end) @0x7f46c6776680
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.heap_end.6721 (implicit_section)
+  Aux: @0x1
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+_read/99 (_read) @0x7f46c67749d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._read (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_open/98 (_open) @0x7f46c6774870
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._open (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_lseek/97 (_lseek) @0x7f46c6774708
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._lseek (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_link/96 (_link) @0x7f46c67745a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._link (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_kill/95 (_kill) @0x7f46c6774438
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._kill (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_isatty/94 (_isatty) @0x7f46c67742d0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._isatty (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_getpid/93 (_getpid) @0x7f46c6774168
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._getpid (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_fstat/92 (_fstat) @0x7f46c6774000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._fstat (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_fork/91 (_fork) @0x7f46c676ce10
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._fork (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_execve/90 (_execve) @0x7f46c676cca8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._execve (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+environ/89 (environ) @0x7f46c676eb00
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.data.environ (implicit_section)
+  Aux: @0x7f46c6776680
+  References: __env/88 (addr)
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+__env/88 (__env) @0x7f46c676ea80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.__env (implicit_section)
+  Aux: @0x7f46c676eb00
+  References: 
+  Referring: environ/89 (addr)
+  Availability: available
+  Varpool flags: initialized
+_close/87 (_close) @0x7f46c676cb40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._close (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_exit/86 (_exit) @0x7f46c676c9d8
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._exit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_main/85 (_main) @0x7f46c676c870
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text._main (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tty_read_lb/84 (tty_read_lb) @0x7f46c676c708
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.tty_read_lb (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tty_read_un/83 (tty_read_un) @0x7f46c676c5a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.tty_read_un (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tty_write/82 (tty_write) @0x7f46c676c438
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.tty_write (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+ttyconfig/81 (ttyconfig) @0x7f46c6765f00
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.data.ttyconfig (implicit_section)
+  Aux: @0x7f46c676ea80
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+SerialFlush/80 (SerialFlush) @0x7f46c676c168
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.SerialFlush (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+SerialRead/78 (SerialRead) @0x7f46c6bc2e10
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.SerialRead (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+SerialWrite/77 (SerialWrite) @0x7f46c6bc2ca8
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.SerialWrite (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+SerialInit/76 (SerialInit) @0x7f46c6bc2b40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.SerialInit (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 

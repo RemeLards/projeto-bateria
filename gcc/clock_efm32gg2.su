@@ -1,0 +1,14 @@
+system_efm32gg.h:138:22:SystemCoreClockUpdate	8	static
+clock_efm32gg2.c:61:25:GetProdRev	4	static
+clock_efm32gg2.c:75:1:nearestpower2exp	32	static
+clock_efm32gg2.c:105:5:ClockRegisterCallback	32	static
+clock_efm32gg2.c:138:5:ClockProcessPreChange	24	static
+clock_efm32gg2.c:157:5:ClockProcessPostChange	24	static
+clock_efm32gg2.c:196:1:ClockSetCoreClock	48	static
+clock_efm32gg2.c:401:1:ClockGetConfiguration	56	static
+clock_efm32gg2.c:502:1:ClockConfigureSystemForClockFrequency	24	static
+clock_efm32gg2.c:551:1:ClockSetPrescalers	48	static
+clock_efm32gg2.c:624:1:ClockSetLFCLKA	24	static
+clock_efm32gg2.c:694:1:ClockSetLFCLKB	24	static
+clock_efm32gg2.c:760:1:ClockGetPeripheralClockFrequency	56	static
+clock_efm32gg2.c:777:1:ClockGetCoreClockFrequency	56	static

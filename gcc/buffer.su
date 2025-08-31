@@ -1,0 +1,5 @@
+buffer.c:29:1:buffer_init	24	static
+buffer.c:48:1:buffer_deinit	16	static
+buffer.c:63:2:buffer_clear	16	static
+buffer.c:79:1:buffer_insert	16	static
+buffer.c:99:1:buffer_remove	24	static
