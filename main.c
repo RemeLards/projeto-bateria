@@ -21,6 +21,7 @@
 #include "pwm.h"
 #include "button.h"
 #include "clock_efm32gg2.h"
+#include "audio.h"
 
 /*****************************************************************************
  * @brief  SysTick interrupt handler
@@ -33,6 +34,7 @@
 #define SOFTDIVIDER 44100
 
 static const char *genres[] = {"ROCK", "POP"};
+static const char* current_genre_str[] = {"0","1"};
 static short int len_genres = 2;
 static short int current_genre = 0;
 
@@ -46,40 +48,14 @@ void choose_genre(void){
     {
         current_genre=0;
     }
+    change_audio(current_genre);
 }
 
 void SysTick_Handler(void) {
-    static int counter = 0;             // must be static
 
-    // ticks++;                        // overflow in 49 days
+    play_audio();
 
-    /* Blink */
-    if( counter != 0 )
-    {
-        counter--;
-    }
-
-    else
-    {
-        counter = SOFTDIVIDER-1;
-    }
 }
-
-//}
-
-
-/*****************************************************************************
- * @brief  Delay function based on SysTick
- *****************************************************************************/
-
-
-// void
-// Delay(uint32_t v) {
-// uint32_t lim = ticks+v;       // Missing processing of overflow here
-
-//     while ( ticks < lim ) {}
-
-// }
 
 
 
@@ -99,13 +75,17 @@ void SysTick_Handler(void) {
 void buttoncallback(uint32_t v)
 {
     uint32_t b = Button_ReadReleased();
-    // if( b&BUTTON1 ) {
-    //     LED_Toggle(LED1);
-    // }
+    if( b&BUTTON1 ) {
+        
+        toggle_song();
+        LED_Toggle(LED1);
+
+    }
     if( b&BUTTON2 )
     {
         LED_Toggle(LED2);
         LCD_WriteAlphanumericDisplay((char*)genres[current_genre]);
+        LCD_WriteNumericDisplay((char*)current_genre_str[current_genre]);
         choose_genre();
     }
 }
@@ -114,6 +94,7 @@ void config_ios(void){
 
     /* Configure LEDs */
     LED_Init(LED1|LED2);
+    LED_Toggle(LED1);
     
 
     /* Configure Buttons */
@@ -133,6 +114,8 @@ void config_ios(void){
 
     LCD_ClearAll();
     // Delay(DELAYVAL);
+    LCD_WriteAlphanumericDisplay((char*)genres[current_genre]);
+    LCD_WriteNumericDisplay((char*)current_genre_str[current_genre]);
 }
 
 int main(void) {
@@ -143,25 +126,13 @@ int main(void) {
 
     config_ios();
 
+
     // Configure SysTick
     SysTick_Config(SystemCoreClock/SYSTICKDIVIDER);
 
 
-    int cnt=0;
-    unsigned val = 0;
     while (1) {
-        // printf("counter=%5X status=%5X value=%5X top=%5X\n",TIMER3->CNT,
-        //                 TIMER3->STATUS,
-        //                 TIMER3->CC[2].CCV,
-        //                 TIMER3->TOP);
-        if( cnt-- == 0 ) {
-            LED_Toggle(LED1); // Trying to control LED thru GPIO
-            cnt = SYSTICKDIVIDER;
-            val += 0x1000;
-            if( val > 0XFFFF ) val = 0;
-            PWM_Write(TIMER3,2,val);
-        }
-
+        __WFI();
     }
 
 }

@@ -52,7 +52,7 @@
  * @note   Maximal value must be less or equal to 0xFFFF.
  *         It is a 16 bit value
  */
-#define MAXTIMER 0XFFFF
+#define MAXTIMER  0x7F//0xFF//0x3FF//0XFFFF //Botando 127 bits por conta da velocidade
 
 /**
  * @brief    List of Timers
@@ -534,7 +534,7 @@ int rc;
     PWM_Stop(timer);
 
     /* Configure timer to default values: div=1 top=max */
-    rc = PWM_ConfigTimer(timer,2,MAXTIMER);
+    rc = PWM_ConfigTimer(timer,2,MAXTIMER); // 0x7F COlocando limite de 127 bits
     if( rc < 0 ) return -3;
 
     uint32_t route = timer->ROUTE;

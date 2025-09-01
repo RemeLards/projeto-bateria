@@ -10,7 +10,7 @@ CFLAGS=-g
 APP=Wave2C
 SRCS=Wave2C.c
 OBJS=$(SRCS:.c=.o)
-TSTS=Bass-Drum-1.wav  Bass-Drum-2.wav  Bass-Drum-3.wav  Claves.wav
+TSTS=Bass-Drum-1.wav  Bass-Drum-2.wav  Bass-Drum-3.wav
 TSTOUT:=$(TSTS:.wav=.c)
 APPFLAGS=-v -c -s
 

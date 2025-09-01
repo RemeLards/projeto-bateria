@@ -1,5 +1,0 @@
-temperature.c:34:13:GetCalibrationValues	4	static
-temperature.c:45:1:Temperature_Init	16	static
-temperature.c:60:1:Temperature_GetRawReading	16	static
-temperature.c:77:1:Temperature_GetUncalibratedValue	16	static
-temperature.c:106:1:Temperature_GetCalibratedValue	16	static

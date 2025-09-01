@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "led.h": "c",
+        "lcd.h": "c",
+        "clock_efm32gg2.h": "c",
+        "button.h": "c",
+        "pwm.h": "c",
+        "stdio.h": "c",
+        "bass_drum_1.c": "cpp",
+        "audio.h": "c",
+        "stdint.h": "c",
+        "em_device.h": "c",
+        "stdlib.h": "c",
+        "bass_drum_1_channel1.h": "c",
+        "bass_drum_2_channel1.h": "c",
+        "gpio.h": "c"
+    }
+}
