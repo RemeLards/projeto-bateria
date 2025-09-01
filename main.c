@@ -33,27 +33,37 @@
 #define SYSTICKDIVIDER 44100
 #define SOFTDIVIDER 44100
 
-static const char *genres[] = {"ROCK", "POP"};
+static const char start_str[6] = "start";
+static const char *genres[] = {"DRUM1", "DRUM2"};
 static const char* current_genre_str[] = {"0","1"};
 static short int len_genres = 2;
-static short int current_genre = 0;
+static short int current_genre = -1;
+static char current_bpm[4] = "000";
 
 
 // static uint32_t ticks = 0;
 
+void set_bpm_display(uint8_t bpm)
+{
+    current_bpm[0] = '0' + (bpm / 100);
+    current_bpm[1] = '0' + ((bpm / 10) % 10);
+    current_bpm[2] = '0' + (bpm % 10);
+    current_bpm[3] = '\0';
+}
+
 
 void choose_genre(void){
-
-    if (++current_genre > len_genres-1)
+    if (current_genre == -1) current_genre = 0;
+    else if (++current_genre > len_genres-1)
     {
         current_genre=0;
     }
-    change_audio(current_genre);
+    change_sample(current_genre);
 }
 
 void SysTick_Handler(void) {
 
-    play_audio();
+    play_sample();
 
 }
 
@@ -83,10 +93,12 @@ void buttoncallback(uint32_t v)
     }
     if( b&BUTTON2 )
     {
+        choose_genre();
         LED_Toggle(LED2);
         LCD_WriteAlphanumericDisplay((char*)genres[current_genre]);
-        LCD_WriteNumericDisplay((char*)current_genre_str[current_genre]);
-        choose_genre();
+        int bpm = estimate_bpm(current_genre);
+        set_bpm_display(bpm);
+        LCD_WriteNumericDisplay((char*)current_bpm);
     }
 }
 
@@ -114,8 +126,10 @@ void config_ios(void){
 
     LCD_ClearAll();
     // Delay(DELAYVAL);
-    LCD_WriteAlphanumericDisplay((char*)genres[current_genre]);
-    LCD_WriteNumericDisplay((char*)current_genre_str[current_genre]);
+    LCD_WriteAlphanumericDisplay((char*)start_str);
+    LCD_WriteNumericDisplay((char*)current_bpm);
+
+    rythm_init();
 }
 
 int main(void) {
@@ -126,6 +140,9 @@ int main(void) {
 
     config_ios();
 
+
+    /* Enable interrupts */
+    __enable_irq();
 
     // Configure SysTick
     SysTick_Config(SystemCoreClock/SYSTICKDIVIDER);

@@ -1,8 +1,11 @@
 import re
 
 num=1
-input_file = f"Bass_Drum_{num}.c"
-output_file = f"Bass_Drum_{num}_channel1.c"
+# input_file = f"Bass_Drum_{num}.c"
+# output_file = f"Bass_Drum_{num}_channel1.c"
+
+input_file = "Claves.c"
+output_file = "Claves_channel1.c"
 
 # Ler o arquivo original
 with open(input_file, "r") as f:
