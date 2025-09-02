@@ -27,6 +27,7 @@ typedef struct rythm
     uint8_t*    rythm_type;
     uint32_t    rythm_counter;
     uint32_t    rythm_limit;
+    uint8_t     rythm_default_bpm_mult; 
     uint8_t     rythm_bpm_mult; 
     uint16_t    original_bpm;
     SAMPLE sample;

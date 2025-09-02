@@ -48,6 +48,7 @@ void rythm_init()
     rythm.rythm_limit = 0;
     rythm.rythm_type = NULL;
     rythm.rythm_bpm_mult = 1;
+    rythm.rythm_default_bpm_mult = 1;
 
     rythm.sample.sample_counter = 0;
     rythm.sample.sample_limit = 0;
@@ -92,18 +93,21 @@ void change_rythm(uint8_t rythm_choosen)
         rythm.rythm_type = rock;
         rythm.rythm_limit = ROCK_LIMIT;
         rythm.rythm_bpm_mult = 1;
+        rythm.rythm_default_bpm_mult = 1;
     }
     else if (rythm_choosen == MPB)
     {
         rythm.rythm_type = mpb;
         rythm.rythm_limit = MPB_LIMIT;
-        rythm.rythm_bpm_mult = 2;
+        rythm.rythm_bpm_mult = 1;
+        rythm.rythm_default_bpm_mult = 2;
     }
     else if (rythm_choosen == SAMBA)
     {
         rythm.rythm_type = samba;
         rythm.rythm_limit = SAMBA_LIMIT;
         rythm.rythm_bpm_mult = 1;
+        rythm.rythm_default_bpm_mult = 1;
     }
     rythm.rythm_counter = 0;
     rythm.sample.sample_counter = 0;
@@ -171,8 +175,8 @@ uint8_t play_sample(void)
         {
 
             uint8_t pwm_val = rythm.sample.sample_type[rythm.sample.sample_counter];
-            rythm.sample.sample_counter += (1 * rythm.sample.sample_bpm_mul * rythm.rythm_bpm_mult);
-
+            rythm.sample.sample_counter += (1 * rythm.sample.sample_bpm_mul * 
+                                            rythm.rythm_bpm_mult * rythm.rythm_default_bpm_mult);
 
             PWM_Write(TIMER3,2,pwm_val);
         }
@@ -232,7 +236,7 @@ uint16_t estimate_initial_bpm()
 
     double bpm = ((double)beats / duration_seconds) * 60.0;
 
-    rythm.original_bpm = (uint16_t) ((bpm + 0.5)*rythm.rythm_bpm_mult) ; // arredonda ao inteiro mais próximo
+    rythm.original_bpm = (uint16_t) ((bpm + 0.5)*rythm.rythm_default_bpm_mult) ; // arredonda ao inteiro mais próximo
     return rythm.original_bpm;
 }
 
