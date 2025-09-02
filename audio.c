@@ -97,7 +97,7 @@ void change_rythm(uint8_t rythm_choosen)
     {
         rythm.rythm_type = mpb;
         rythm.rythm_limit = MPB_LIMIT;
-        rythm.rythm_bpm_mult = 1;
+        rythm.rythm_bpm_mult = 2;
     }
     else if (rythm_choosen == SAMBA)
     {
@@ -232,7 +232,7 @@ uint16_t estimate_initial_bpm()
 
     double bpm = ((double)beats / duration_seconds) * 60.0;
 
-    rythm.original_bpm = (uint16_t) ((bpm + 0.5)) ; // arredonda ao inteiro mais próximo
+    rythm.original_bpm = (uint16_t) ((bpm + 0.5)*rythm.rythm_bpm_mult) ; // arredonda ao inteiro mais próximo
     return rythm.original_bpm;
 }
 

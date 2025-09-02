@@ -38,15 +38,16 @@ static const char start_str[6] = "START";
 static const char *genres[] = {"ROCK", "MPB", "SAMBA"};
 static short int len_genres = 3;
 static short int current_genre = -1;
-static char current_bpm[4] = "000";
+static char current_bpm[5] = "0000";
 
 
 void set_bpm_display(uint16_t bpm)
 {
-    current_bpm[0] = '0' + (bpm / 100);
-    current_bpm[1] = '0' + ((bpm / 10) % 10);
-    current_bpm[2] = '0' + (bpm % 10);
-    current_bpm[3] = '\0';
+    current_bpm[0] = '0' + (bpm / 1000);
+    current_bpm[1] = '0' + ((bpm / 100)%10);
+    current_bpm[2] = '0' + ((bpm / 10)%10);
+    current_bpm[3] = '0' + (bpm % 10);
+    current_bpm[4] = '\0';
 }
 
 

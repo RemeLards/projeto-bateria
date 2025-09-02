@@ -27,8 +27,6 @@ typedef struct rythm
     uint8_t*    rythm_type;
     uint32_t    rythm_counter;
     uint32_t    rythm_limit;
-    //Desisti da feature de acelerar a música desde o início para ter controle fino (do 'rythm_bpm_mult')
-    //Agora ele vai servir apenas de multiplicador, ou seja, não sera relevante para o Calculo do BPM inicial
     uint8_t     rythm_bpm_mult; 
     uint16_t    original_bpm;
     SAMPLE sample;
