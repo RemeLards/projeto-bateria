@@ -24,13 +24,7 @@
 #include "audio.h"
 #include "touch.h"
 
-/*****************************************************************************
- * @brief  SysTick interrupt handler
- *
- * @note   Called every 1/DIVIDER seconds (1 ms)
- */
 
-//{
 #define SYSTICKDIVIDER 44100
 #define TOUCH_PERIOD 300
 
@@ -41,6 +35,9 @@ static short int current_genre = -1;
 static char current_bpm[5] = "0000";
 
 
+/**
+ * @brief Calcula a string do BPM para o display
+ */
 void set_bpm_display(uint16_t bpm)
 {
     current_bpm[0] = '0' + (bpm / 1000);
@@ -51,6 +48,9 @@ void set_bpm_display(uint16_t bpm)
 }
 
 
+/**
+ * @brief Troca o gênero da música
+ */
 void choose_genre(void){
     if (current_genre == -1) current_genre = 0;
     else if (++current_genre > len_genres-1)
@@ -60,6 +60,9 @@ void choose_genre(void){
     change_rythm(current_genre);
 }
 
+/**
+ * @brief Interrupção do SysTick responsável por settar o PWM e ler o Slider
+ */
 void SysTick_Handler(void) {
 
     static uint16_t touchcounter = 0;
@@ -105,20 +108,9 @@ void SysTick_Handler(void) {
 }
 
 
-
-/*****************************************************************************
- * @brief  Main function
- *
- * @note   Using default clock configuration
- *         HFCLK = HFRCO
- *         HFCORECLK = HFCLK
- *         HFPERCLK  = HFCLK
+/**
+ * @brief Callback responsável por parar a música ou trocar o gênero da música ao apertar um dos botões
  */
-
-
-#define DELAYVAL 2
-
-
 void buttoncallback(uint32_t v)
 {
     uint32_t b = Button_ReadReleased();
@@ -135,6 +127,10 @@ void buttoncallback(uint32_t v)
     }
 }
 
+
+/**
+ * @brief Configuração de todos I/O's LED/Botão/PWM/LCD/Slider e configuração inicial da Struct de rítmos
+ */
 void config_ios(void){
 
     /* Configure LEDs */
@@ -165,6 +161,10 @@ void config_ios(void){
     rythm_init();
 }
 
+
+/**
+ * @brief Loop Principal
+ */
 int main(void) {
     
 

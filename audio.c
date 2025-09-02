@@ -42,6 +42,9 @@ typedef enum
 
 RYTHM rythm;
 
+/**
+ * @brief Inicializa a Struct global de rítmos
+ */
 void rythm_init()
 {
     rythm.rythm_counter = 0;
@@ -86,6 +89,9 @@ static const uint8_t sine_table[100] = {
     26, 29, 32, 36, 40, 43, 47, 51, 55, 59};
 
 
+/**
+ * @brief Troca o rítmo baseado em um valor dado, valores tabelados no ENUM 'RYTHM_TYPES'
+ */
 void change_rythm(uint8_t rythm_choosen)
 {
     if ( rythm_choosen == ROCK)
@@ -114,6 +120,10 @@ void change_rythm(uint8_t rythm_choosen)
     change_sample(rythm.rythm_type[rythm.rythm_counter++]);
 }
 
+
+/**
+ * @brief Toca o rítmo/gênero percorrendo o array 'rythm.rythm_type' e tocando cada sample
+ */
 void play_rythm(void)
 {
     if (rythm.rythm_type)
@@ -126,6 +136,10 @@ void play_rythm(void)
     }    
 }
 
+
+/**
+ * @brief Troca a sample/som baseado em um valor dado, valores tabelados no ENUM 'SONG_TYPES'
+ */
 void change_sample(int sample)
 {
     if ( sample == CLAP_TYPE )
@@ -161,6 +175,11 @@ void change_sample(int sample)
     rythm.sample.sample_counter=0;
 }
 
+
+/**
+ * @brief Toca a sample/som percorrendo o array 'rythm.sample.sample_type' e 
+ * colocando o valor deste retirado nesse array como o valor da sáida do PWM
+ */
 uint8_t play_sample(void)
 {
     if (rythm.sample.sample_counter > rythm.sample.sample_limit)
@@ -184,23 +203,40 @@ uint8_t play_sample(void)
     return 1;
 }
 
+
+/**
+ * @brief Troca o estado do som para resumido/parado dependendo do estado da variável global 'stop_music' 
+ */
+
 void toggle_song()
 {
     if (stop_music) resume_song();
     else stop_song();
 }
 
+
+/**
+ * @brief Troca o estado de 'stop_music' para 1 
+ */
 void stop_song()
 {
     stop_music = 1;
     PWM_Write(TIMER3,2,0); //stop any sound
 }
 
+
+/**
+ * @brief Troca o estado de 'stop_music' para 0
+ */
 void resume_song()
 {
     stop_music = 0;
 }
 
+
+/**
+ * @brief Estima o BPM inicial da música, para caso acelere usando o slider, basta fazer uma multiplicação
+ */
 uint16_t estimate_initial_bpm()
 {
     if (!rythm.rythm_type) return 0;
@@ -240,6 +276,11 @@ uint16_t estimate_initial_bpm()
     return rythm.original_bpm;
 }
 
+
+/**
+ * @brief Multiplica o BPM calculado inicialmente da música, retorna para ser mostrado no display
+ * e altera o BPM da música lendo o array 'rythm.sample.sample_type' mais rapidamente
+ */
 int16_t multiply_bpm(uint8_t value)
 {
     rythm.rythm_bpm_mult = value;
