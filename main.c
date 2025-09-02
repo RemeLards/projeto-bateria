@@ -22,6 +22,7 @@
 #include "button.h"
 #include "clock_efm32gg2.h"
 #include "audio.h"
+#include "touch.h"
 
 /*****************************************************************************
  * @brief  SysTick interrupt handler
@@ -31,16 +32,16 @@
 
 //{
 #define SYSTICKDIVIDER 44100
-#define SOFTDIVIDER 44100
+#define TOUCH_PERIOD 300
 
-static const char start_str[6] = "start";
+static const char start_str[6] = "START";
 static const char *genres[] = {"ROCK", "MPB", "SAMBA"};
 static short int len_genres = 3;
 static short int current_genre = -1;
 static char current_bpm[4] = "000";
 
 
-void set_bpm_display(uint8_t bpm)
+void set_bpm_display(uint16_t bpm)
 {
     current_bpm[0] = '0' + (bpm / 100);
     current_bpm[1] = '0' + ((bpm / 10) % 10);
@@ -60,8 +61,45 @@ void choose_genre(void){
 
 void SysTick_Handler(void) {
 
-   //play_sample();
-   play_rythm();
+    static uint16_t touchcounter = 0;
+    static uint8_t v = 0;
+   
+    play_rythm();
+
+    /* Touch processing */
+    if( touchcounter != 0 ) {
+        touchcounter--;
+    } else {
+        touchcounter = TOUCH_PERIOD;
+        Touch_PeriodicProcess();
+        v = Touch_Read();
+        int tc = Touch_GetCenterOfTouch(v);
+        if (tc > 0)
+        {
+            uint16_t bpm = 0;
+            if ( tc == 1 )
+            {
+                bpm = multiply_bpm(4);
+            }
+            else if ( tc == 3 )
+            {
+                bpm = multiply_bpm(3);
+            }
+            else if ( tc == 5 )
+            {
+                bpm = multiply_bpm(2);
+            }
+            else if ( tc == 7)
+            {
+                bpm = multiply_bpm(1);
+            }
+            if (bpm > 0)
+            {
+                set_bpm_display(bpm);
+                LCD_WriteNumericDisplay((char*)current_bpm);
+            }
+        }
+    }
 
 }
 
@@ -84,15 +122,11 @@ void buttoncallback(uint32_t v)
 {
     uint32_t b = Button_ReadReleased();
     if( b&BUTTON1 ) {
-        
         toggle_song();
-        LED_Toggle(LED1);
-
     }
     if( b&BUTTON2 )
     {
         choose_genre();
-        LED_Toggle(LED2);
         LCD_WriteAlphanumericDisplay((char*)genres[current_genre]);
         uint64_t bpm = estimate_initial_bpm();
         set_bpm_display(bpm);
@@ -104,8 +138,7 @@ void config_ios(void){
 
     /* Configure LEDs */
     LED_Init(LED1|LED2);
-    LED_Toggle(LED1);
-    
+
 
     /* Configure Buttons */
     Button_Init(BUTTON1|BUTTON2);
@@ -120,13 +153,14 @@ void config_ios(void){
     /* Configure LCD */
     LCD_Init();
     LCD_SetAll();
-    // Delay(DELAYVAL);
-
     LCD_ClearAll();
-    // Delay(DELAYVAL);
     LCD_WriteAlphanumericDisplay((char*)start_str);
     LCD_WriteNumericDisplay((char*)current_bpm);
 
+    // Configure touch sensor 
+    Touch_Init();
+
+    // Configure rythm player
     rythm_init();
 }
 
@@ -136,8 +170,8 @@ int main(void) {
     // Set clock source to external crystal: 48 MHz
     (void) SystemCoreClockSet(CLOCK_HFXO,1,1);
 
+    // Configure Every I/O
     config_ios();
-
 
     /* Enable interrupts */
     __enable_irq();

@@ -11,6 +11,7 @@ uint16_t estimate_initial_bpm(void);
 void rythm_init(void);
 void change_rythm(uint8_t rythm_choosen);
 void play_rythm(void);
+int16_t multiply_bpm(uint8_t value);
 
 
 typedef struct sample
@@ -26,7 +27,9 @@ typedef struct rythm
     uint8_t*    rythm_type;
     uint32_t    rythm_counter;
     uint32_t    rythm_limit;
-    uint8_t     rythm_bpm_mult; //Desisti da feature quando fui fazer o calculo do BPM, se der tempo corrijo
+    //Desisti da feature de acelerar a música desde o início para ter controle fino (do 'rythm_bpm_mult')
+    //Agora ele vai servir apenas de multiplicador, ou seja, não sera relevante para o Calculo do BPM inicial
+    uint8_t     rythm_bpm_mult; 
     uint16_t    original_bpm;
     SAMPLE sample;
 }RYTHM;

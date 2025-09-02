@@ -32,9 +32,9 @@ typedef enum
 }RYTHM_TYPES;
 
 #define CLAP_BPM_MUL 1
-#define BASSDRUM2_BPM_MUL 3
+#define BASSDRUM2_BPM_MUL 2
 #define MARACAS_BPM_MUL 1
-#define HIGH_BONGO_BPM_MUL 2
+#define HIGH_BONGO_BPM_MUL 1
 
 
 #define SAMPLE_RATE 44100
@@ -234,4 +234,10 @@ uint16_t estimate_initial_bpm()
 
     rythm.original_bpm = (uint16_t) ((bpm + 0.5)) ; // arredonda ao inteiro mais próximo
     return rythm.original_bpm;
+}
+
+int16_t multiply_bpm(uint8_t value)
+{
+    rythm.rythm_bpm_mult = value;
+    return rythm.original_bpm*rythm.rythm_bpm_mult;
 }
