@@ -34,14 +34,11 @@
 #define SOFTDIVIDER 44100
 
 static const char start_str[6] = "start";
-static const char *genres[] = {"DRUM1", "DRUM2"};
-static const char* current_genre_str[] = {"0","1"};
-static short int len_genres = 2;
+static const char *genres[] = {"ROCK", "MPB", "SLA"};
+static short int len_genres = 3;
 static short int current_genre = -1;
 static char current_bpm[4] = "000";
 
-
-// static uint32_t ticks = 0;
 
 void set_bpm_display(uint8_t bpm)
 {
@@ -58,12 +55,13 @@ void choose_genre(void){
     {
         current_genre=0;
     }
-    change_sample(current_genre);
+    change_rythm(current_genre);
 }
 
 void SysTick_Handler(void) {
 
-    play_sample();
+   //play_sample();
+   play_rythm();
 
 }
 
@@ -96,7 +94,7 @@ void buttoncallback(uint32_t v)
         choose_genre();
         LED_Toggle(LED2);
         LCD_WriteAlphanumericDisplay((char*)genres[current_genre]);
-        int bpm = estimate_bpm(current_genre);
+        int bpm = estimate_bpm();
         set_bpm_display(bpm);
         LCD_WriteNumericDisplay((char*)current_bpm);
     }

@@ -5,7 +5,9 @@
 
 // #include "sound/Bass_Drum_1_channel1.h"
 #include "sound/Bass_Drum_2_channel1.c"
-#include "sound/Claves_channel1.c"
+#include "sound/Clap_channel1.c"
+#include "sound/Maracas_channel1.c"
+#include "sound/High_Bongo_channel1.c"
 #include "em_device.h"
 #include "gpio.h"
 #include "clock_efm32gg2.h"
@@ -14,8 +16,26 @@
 #define IGNORE_RYTHM_COUNTER 0
 #define USE_SINE_TEST 0
 
-#define CLAVES_TYPE 0
-#define BASSDRUM2_TYPE 1
+typedef enum
+{
+    CLAP_TYPE = 0,
+    BASSDRUM2_TYPE,
+    MARACAS_TYPE,
+    HIGH_BONGO_TYPE,
+}SONG_TYPES;
+
+typedef enum
+{
+    ROCK = 0,
+    POP,
+    SAMBA,
+}RYTHM_TYPES;
+
+#define CLAP_BPM_MUL 1
+#define BASSDRUM2_BPM_MUL 3
+#define MARACAS_BPM_MUL 2
+#define HIGH_BONGO_MUL 4
+
 
 #define BLOCK_SIZE 256
 #define SAMPLE_RATE 44100
@@ -26,18 +46,27 @@ RYTHM rythm;
 
 void rythm_init()
 {
-    rythm.rythm_counter=0;
-    rythm.rythm_limit=0;
-    rythm.rythm_type=NULL;
+    rythm.rythm_counter = 0;
+    rythm.rythm_limit = 0;
+    rythm.rythm_type = NULL;
+    rythm.rythm_bpm_mult = 1;
 
-    rythm.sample.sample_counter=0;
-    rythm.sample.sample_limit=0;
-    rythm.sample.sample_type=NULL;
+    rythm.sample.sample_counter = 0;
+    rythm.sample.sample_limit = 0;
+    rythm.sample.sample_type = NULL;
+    rythm.sample.sample_bpm_mul = 1;
 }
 
 
-uint8_t rock[3] = {BASSDRUM2_TYPE,BASSDRUM2_TYPE,CLAVES_TYPE};
-uint8_t pop[3] = {CLAVES_TYPE,CLAVES_TYPE,BASSDRUM2_TYPE};
+#define ROCK_LIMIT 2
+uint8_t rock[3] = {BASSDRUM2_TYPE,BASSDRUM2_TYPE,CLAP_TYPE};
+
+#define POP_LIMIT 2
+uint8_t pop[3] = {CLAP_TYPE,CLAP_TYPE,BASSDRUM2_TYPE};
+
+#define SAMBA_LIMIT 9
+uint8_t samba[10] = {MARACAS_TYPE, MARACAS_TYPE, MARACAS_TYPE, MARACAS_TYPE, MARACAS_TYPE,
+                  MARACAS_TYPE, MARACAS_TYPE, HIGH_BONGO_TYPE, HIGH_BONGO_TYPE, HIGH_BONGO_TYPE};
 
 static uint8_t* choosen_sample = NULL;
 static uint8_t* choosen_rythm = NULL;
@@ -58,53 +87,99 @@ static const uint8_t sine_table[100] = {
     26, 29, 32, 36, 40, 43, 47, 51, 55, 59};
 
 
-void change_rythm(uint8_t rythm)
+void change_rythm(uint8_t rythm_choosen)
 {
-    if ( rythm == 0)
+    if ( rythm_choosen == ROCK)
     {
-        choosen_rythm = rock;
+        rythm.rythm_type = rock;
+        rythm.rythm_limit = ROCK_LIMIT;
+        rythm.rythm_bpm_mult = 1;
     }
-    else if (rythm == 1)
+    else if (rythm_choosen == POP)
     {
-        choosen_sample = pop;
+        rythm.rythm_type = pop;
+        rythm.rythm_limit = POP_LIMIT;
+        rythm.rythm_bpm_mult = 2;
     }
-    song_counter=0;
+    else if (rythm_choosen == SAMBA)
+    {
+        rythm.rythm_type = samba;
+        rythm.rythm_limit = SAMBA_LIMIT;
+        rythm.rythm_bpm_mult = 1;
+    }
+    rythm.rythm_counter = 0;
+    rythm.sample.sample_counter = 0;
+    change_sample(rythm.rythm_type[rythm.rythm_counter++]);
+}
+
+void play_rythm(void)
+{
+    if (rythm.rythm_type)
+    {
+        if(!play_sample())
+        {
+            if (rythm.rythm_counter > rythm.rythm_limit) rythm.rythm_counter = 0;
+            change_sample(rythm.rythm_type[rythm.rythm_counter++]);
+        }
+    }    
 }
 
 void change_sample(int sample)
 {
-    if ( sample == 0)
+    if ( sample == CLAP_TYPE )
     {
         #if USE_SINE_TEST
         rythm.sample.sample_type = (uint8_t*)sine_table;
         rythm.sample.sample_limit = 99;
         #else
-        rythm.sample.sample_type = CLAVES;
-        rythm.sample.sample_limit = CLAVES_SIZE;
+        rythm.sample.sample_type = (uint8_t*) CLAP;
+        rythm.sample.sample_limit = CLAP_SIZE;
+        rythm.sample.sample_bpm_mul = CLAP_BPM_MUL;
         #endif
     }
-    else if (sample == 1)
+    else if ( sample == BASSDRUM2_TYPE )
     {
-        rythm.sample.sample_type = BASSDRUM2;
+        rythm.sample.sample_type = (uint8_t*) BASSDRUM2;
         rythm.sample.sample_limit = BASSDRUM2_SIZE;
+        rythm.sample.sample_bpm_mul = BASSDRUM2_BPM_MUL;
     }
+    else if ( sample == MARACAS_TYPE )
+    {
+        rythm.sample.sample_type = (uint8_t*) MARACAS;
+        rythm.sample.sample_limit = MARACAS_SIZE;
+        rythm.sample.sample_bpm_mul = MARACAS_BPM_MUL;
+    }
+    else if ( sample == HIGH_BONGO_TYPE )
+    {
+        rythm.sample.sample_type = (uint8_t*) HIGHBONGO;
+        rythm.sample.sample_limit = HIGHBONGO_SIZE;
+        rythm.sample.sample_bpm_mul = HIGH_BONGO_MUL;
+    }
+
     rythm.sample.sample_counter=0;
 }
 
-void play_sample()
+uint8_t play_sample(void)
 {
-    if (rythm.sample.sample_counter > rythm.sample.sample_limit) rythm.sample.sample_counter = 0; //Resets the song
+    if (rythm.sample.sample_counter > rythm.sample.sample_limit)
+    {
+        rythm.sample.sample_counter = 0; //Resets the song
+        return 0;
+    }
     
     if(!stop_music)
     {
         if (rythm.sample.sample_type)
         {
 
-            uint8_t pwm_val = rythm.sample.sample_type[rythm.sample.sample_counter++];
+            uint8_t pwm_val = rythm.sample.sample_type[rythm.sample.sample_counter];
+            rythm.sample.sample_counter += (1 * rythm.sample.sample_bpm_mul * rythm.rythm_bpm_mult);
+
 
             PWM_Write(TIMER3,2,pwm_val);
         }
     }
+    return 1;
 }
 
 void toggle_song()

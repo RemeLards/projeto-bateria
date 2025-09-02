@@ -10,7 +10,7 @@ CFLAGS=-g
 APP=Wave2C
 SRCS=Wave2C.c
 OBJS=$(SRCS:.c=.o)
-TSTS=Claves.wav
+TSTS= Maracas.wav High-Bongo.wav
 TSTOUT:=$(TSTS:.wav=.c)
 APPFLAGS=-v -c -s
 

@@ -2,7 +2,7 @@
 /* Even: channel 1 | Odd: channel 2 */
 
 #define BASSDRUM1_SIZE (55214)
-uint16_t BASSDRUM1[] = {63, 63, 
+const uint8_t BASSDRUM1[] = {63, 63, 
 63, 63, 
 64, 65, 
 66, 67, 

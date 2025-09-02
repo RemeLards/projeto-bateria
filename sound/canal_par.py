@@ -1,11 +1,11 @@
 import re
 
-num=1
+#num=1
 # input_file = f"Bass_Drum_{num}.c"
 # output_file = f"Bass_Drum_{num}_channel1.c"
 
-input_file = "Claves.c"
-output_file = "Claves_channel1.c"
+input_file = "High_Bongo.c"
+output_file = "High_Bongo_channel1.c"
 
 # Ler o arquivo original
 with open(input_file, "r") as f:
@@ -39,6 +39,8 @@ for i, n in enumerate(channel1):
 # Montar o novo conteúdo do arquivo
 new_content = content[:match.start(2)] + new_array_content + content[match.end(2):]
 
+define_pattern = re.compile(r"(#define\s+\w+_SIZE\s*)\(?\d+\)?")
+new_content = define_pattern.sub(rf"\1({ ((len(channel1)))-2})", new_content)
 
 # Salvar em um novo arquivo
 with open(output_file, "w") as f:
